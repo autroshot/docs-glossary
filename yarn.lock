@@ -691,7 +691,7 @@
     "@chakra-ui/utils" "2.0.9"
     react-fast-compare "3.2.0"
 
-"@chakra-ui/table@2.0.9":
+"@chakra-ui/table@2.0.9", "@chakra-ui/table@^2.0.9":
   version "2.0.9"
   resolved "https://registry.yarnpkg.com/@chakra-ui/table/-/table-2.0.9.tgz#2ddb0202e8146e517bf602e62195d13fee8f1b0a"
   integrity sha512-XRz6+x4dMeQX3xyViyG2H/P1STI/2vwvgU2cjzzwS+5fZ2JdGaTgYzBb+IZoH9agEq1Ma3rlKMUPDrRCFb7kLQ==
