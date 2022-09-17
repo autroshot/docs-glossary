@@ -1,10 +1,17 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
+    <ChakraProvider
+      theme={extendTheme({
+        fonts: {
+          heading: `'Malgun Gothic', sans-serif`,
+          body: `'Malgun Gothic', sans-serif`,
+        },
+      })}
+    >
       <Component {...pageProps} />
     </ChakraProvider>
   );
