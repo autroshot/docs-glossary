@@ -27,8 +27,7 @@ const Home: NextPage = () => {
         <Container centerContent maxW="container.xl" my={3}>
           <Heading>용어집</Heading>
           <TableContainer>
-            <Table variant="simple">
-              <TableCaption>Imperial to metric conversion factors</TableCaption>
+            <Table variant="simple" my={3}>
               <Thead>
                 <Tr>
                   <Th>영어</Th>
