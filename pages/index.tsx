@@ -1,4 +1,15 @@
-import { Container } from '@chakra-ui/react';
+import { Container, Heading } from '@chakra-ui/react';
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
+} from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -13,7 +24,60 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Container centerContent>hello world</Container>
+        <Container centerContent maxW="container.xl" my={3}>
+          <Heading>용어집</Heading>
+          <TableContainer>
+            <Table variant="simple">
+              <TableCaption>Imperial to metric conversion factors</TableCaption>
+              <Thead>
+                <Tr>
+                  <Th>영어</Th>
+                  <Th>한국어</Th>
+                  <Th>종류</Th>
+                  <Th>분야</Th>
+                  <Th>설명</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>application</Td>
+                  <Td>앱, 애플리케이션</Td>
+                  <Td>일반</Td>
+                  <Td></Td>
+                  <Td></Td>
+                </Tr>
+                <Tr>
+                  <Td>assert</Td>
+                  <Td>단언하다</Td>
+                  <Td>일반</Td>
+                  <Td>테스트</Td>
+                  <Td></Td>
+                </Tr>
+                <Tr>
+                  <Td>assertion</Td>
+                  <Td>단언</Td>
+                  <Td>일반</Td>
+                  <Td>테스트</Td>
+                  <Td></Td>
+                </Tr>
+                <Tr>
+                  <Td>attribute</Td>
+                  <Td>속성</Td>
+                  <Td>일반</Td>
+                  <Td>CSS</Td>
+                  <Td></Td>
+                </Tr>
+                <Tr>
+                  <Td>Edge</Td>
+                  <Td>엣지</Td>
+                  <Td>고유</Td>
+                  <Td></Td>
+                  <Td>https://www.microsoft.com/ko-kr/edge</Td>
+                </Tr>
+              </Tbody>
+            </Table>
+          </TableContainer>
+        </Container>
       </main>
       <footer className={styles.footer}>
         <a
