@@ -1,96 +1,96 @@
-application,"¾Û, ¾ÖÇÃ¸®ÄÉÀÌ¼Ç",,ÀÏ¹İ,
-assert,´Ü¾ğÇÏ´Ù,,ÀÏ¹İ,Å×½ºÆ®
-assertion,´Ü¾ğ,,ÀÏ¹İ,Å×½ºÆ®
-attribute,¼Ó¼º,,ÀÏ¹İ,CSS
-background,¹è°æ,,ÀÏ¹İ,CSS
-boilerplate,º¸ÀÏ·¯ÇÃ·¹ÀÌÆ®,,ÀÏ¹İ,
-boolean,ºÒ¸°Çü,,ÀÏ¹İ,
-Chai,Â÷ÀÌ,,°íÀ¯,
-Chakra UI,Â÷Å©¶ó UI,,°íÀ¯,
-chunk,Ã»Å©,,ÀÏ¹İ,
-component,ÄÄÆ÷³ÍÆ®,,ÀÏ¹İ,¸®¾×Æ®
-composition,ÇÕ¼º,,ÀÏ¹İ,¸®¾×Æ®
-context,ÄÁÅØ½ºÆ®,,ÀÏ¹İ,
-convention,ÄÁº¥¼Ç,,ÀÏ¹İ,
-custom,"»ç¿ëÀÚ Á¤ÀÇ, Ä¿½ºÅÒ",,ÀÏ¹İ,
-customize,"»ç¿ëÀÚ Á¤ÀÇÇÏ´Ù, Ä¿½ºÅÍ¸¶ÀÌÁîÇÏ´Ù",,ÀÏ¹İ,
-dark mode,´ÙÅ© ¸ğµå,,ÀÏ¹İ,
-devops,µ¥ºê¿É½º,,ÀÏ¹İ,
-directory,µğ·ºÅÍ¸®,,ÀÏ¹İ,
-double click,´õºí Å¬¸¯,,ÀÏ¹İ,
-Edge,¿§Áö,https://www.microsoft.com/ko-kr/edge,°íÀ¯,
-edge,¿¡Áö,,ÀÏ¹İ,
-Electron,ÀÏ·ºÆ®·Ğ,,°íÀ¯,
-Emmet,¿¡¹Ô,,°íÀ¯,
-endpoint,¿£µåÆ÷ÀÎÆ®,,ÀÏ¹İ,
-express.js,ÀÍ½ºÇÁ·¹½º,,°íÀ¯,
-Firefox,ÆÄÀÌ¾îÆø½º,,°íÀ¯,
-flexbox,ÇÃ·º½º¹Ú½º,,ÀÏ¹İ,CSS
-focus,Æ÷Ä¿½º,,ÀÏ¹İ,
-font,±Û²Ã,,ÀÏ¹İ,
-framework,ÇÁ·¹ÀÓ¿öÅ©,,ÀÏ¹İ,
-function,ÇÔ¼ö,,ÀÏ¹İ,
-generator,»ı¼º±â,,ÀÏ¹İ,
-GitHub,±êÇãºê,,°íÀ¯,
-Golang,°í·©,,°íÀ¯,
-gradient,±×·¹ÀÌµğ¾ğÆ®,,ÀÏ¹İ,CSS
-grid,±×¸®µå,,ÀÏ¹İ,CSS
-height,³ôÀÌ,,ÀÏ¹İ,CSS
-Heroku,Çì·ÎÄí,,°íÀ¯,
-hook,ÈÅ,,ÀÏ¹İ,¸®¾×Æ®
-hydration,¼öÈ­,,ÀÏ¹İ,³Ø½ºÆ®
-import,°¡Á®¿À´Ù,,ÀÏ¹İ,
-interpolation,º¸°£¹ı,,ÀÏ¹İ,
-iterator,¹İº¹ÀÚ,,ÀÏ¹İ,
-Javascript,ÀÚ¹Ù½ºÅ©¸³Æ®,,°íÀ¯,
-jQuery,Á¦ÀÌÄõ¸®,,°íÀ¯,
-layout,·¹ÀÌ¾Æ¿ô,,ÀÏ¹İ,CSS
-mapping,¸ÅÇÎ,,ÀÏ¹İ,
-margin,¸¶Áø,,ÀÏ¹İ,CSS
-method,¸Ş¼­µå,,ÀÏ¹İ,
-middleware,¹Ìµé¿ş¾î,,ÀÏ¹İ,
-naming,¸í¸í,,ÀÏ¹İ,
-navigation,³»ºñ°ÔÀÌ¼Ç,,ÀÏ¹İ,
-Next.js,³Ø½ºÆ®,,°íÀ¯,
-Node.js,³ëµå,,°íÀ¯,
-padding,ÆĞµù,,ÀÏ¹İ,CSS
-parsing,ÆÄ½Ì,,ÀÏ¹İ,
-PostgreSQL,Æ÷½ºÆ®±×·¹SQL,,°íÀ¯,
-Prettier,ÇÁ¸®Æ¼¾î,,°íÀ¯,
-Prisma,ÇÁ¸®Áî¸¶,,°íÀ¯,
-production,ÇÁ·Î´ö¼Ç,,ÀÏ¹İ,
-promise,ÇÁ¶ó¹Ì½º,,ÀÏ¹İ,ÀÚ¹Ù½ºÅ©¸³Æ®
-prop,ÇÁ·Ó,,ÀÏ¹İ,¸®¾×Æ®
-property,"ÇÁ·ÎÆÛÆ¼, ¼Ó¼º",¿ø·¡ ¶æÀº ¼Ó¼ºÀÌÁö¸¸ attribute¿ÍÀÇ ±¸ºĞÀ» À§ÇØ ÇÁ·ÎÆÛÆ¼¸¦ »ç¿ë,ÀÏ¹İ,¸®¾×Æ®
-provider,Á¦°øÀÚ,,ÀÏ¹İ,
-pseudo,"ÀÇ»ç, °¡»ó",,ÀÏ¹İ,
-query string,Äõ¸® ¹®ÀÚ¿­,,ÀÏ¹İ,
-React,¸®¾×Æ®,,°íÀ¯,
-redirection,¸®µğ·º¼Ç,¸®´ÙÀÌ·º¼ÇÀ¸·Îµµ ¸¹ÀÌ »ç¿ë,ÀÏ¹İ,
-Redux,¸®´ö½º,,°íÀ¯,
-reference,·¹ÆÛ·±½º,,ÀÏ¹İ,
-resolve,ÀÌÇàÇÏ´Ù,,ÀÏ¹İ,ÀÚ¹Ù½ºÅ©¸³Æ®
-REST,REST,,ÀÏ¹İ,
-RESTful,RESTful,,ÀÏ¹İ,
-Selenium,¼¿·¹´½,,°íÀ¯,
-session,¼¼¼Ç,,ÀÏ¹İ,
-shorthand,¾àÄª,,ÀÏ¹İ,
-signature,½Ã±×´ÏÃ³,,ÀÏ¹İ,
-snippet,½º´ÏÆê,,ÀÏ¹İ,
-storage,½ºÅä¸®Áö,,ÀÏ¹İ,
-transition,Æ®·£Áö¼Ç,,ÀÏ¹İ,CSS
-troubleshooting,¹®Á¦ ÇØ°á,,ÀÏ¹İ,
-TypeORM,Å¸ÀÔORM,,°íÀ¯,
-TypeScript,Å¸ÀÔ½ºÅ©¸³Æ®,,°íÀ¯,
-typography,Å¸ÀÌÆ÷±×·¡ÇÇ,,ÀÏ¹İ,
-Ubuntu,¿ìºĞÅõ,,°íÀ¯,
-usecase,À¯½º ÄÉÀÌ½º,,ÀÏ¹İ,
-validation,°ËÁõ,,ÀÏ¹İ,
-variation,º¯Çü,,ÀÏ¹İ,
-Vercel,º£¸£¼¿,,°íÀ¯,
-viewport,ºäÆ÷Æ®,,ÀÏ¹İ,
-voice over,º¸ÀÌ½º¿À¹ö,,ÀÏ¹İ,
-WebDriver,À¥µå¶óÀÌ¹ö,,°íÀ¯,
-width,³Êºñ,,ÀÏ¹İ,CSS
-workflow,¿öÅ©ÇÃ·Î,,ÀÏ¹İ,
-Yup,¿±,,°íÀ¯,
+ï»¿application,"ì•±, ì• í”Œë¦¬ì¼€ì´ì…˜",,ì¼ë°˜,
+assert,ë‹¨ì–¸í•˜ë‹¤,,ì¼ë°˜,í…ŒìŠ¤íŠ¸
+assertion,ë‹¨ì–¸,,ì¼ë°˜,í…ŒìŠ¤íŠ¸
+attribute,ì†ì„±,,ì¼ë°˜,CSS
+background,ë°°ê²½,,ì¼ë°˜,CSS
+boilerplate,ë³´ì¼ëŸ¬í”Œë ˆì´íŠ¸,,ì¼ë°˜,
+boolean,ë¶ˆë¦°í˜•,,ì¼ë°˜,
+Chai,ì°¨ì´,,ê³ ìœ ,
+Chakra UI,ì°¨í¬ë¼ UI,,ê³ ìœ ,
+chunk,ì²­í¬,,ì¼ë°˜,
+component,ì»´í¬ë„ŒíŠ¸,,ì¼ë°˜,ë¦¬ì•¡íŠ¸
+composition,í•©ì„±,,ì¼ë°˜,ë¦¬ì•¡íŠ¸
+context,ì»¨í…ìŠ¤íŠ¸,,ì¼ë°˜,
+convention,ì»¨ë²¤ì…˜,,ì¼ë°˜,
+custom,"ì‚¬ìš©ì ì •ì˜, ì»¤ìŠ¤í…€",,ì¼ë°˜,
+customize,"ì‚¬ìš©ì ì •ì˜í•˜ë‹¤, ì»¤ìŠ¤í„°ë§ˆì´ì¦ˆí•˜ë‹¤",,ì¼ë°˜,
+dark mode,ë‹¤í¬ ëª¨ë“œ,,ì¼ë°˜,
+devops,ë°ë¸Œì˜µìŠ¤,,ì¼ë°˜,
+directory,ë””ë ‰í„°ë¦¬,,ì¼ë°˜,
+double click,ë”ë¸” í´ë¦­,,ì¼ë°˜,
+Edge,ì—£ì§€,https://www.microsoft.com/ko-kr/edge,ê³ ìœ ,
+edge,ì—ì§€,,ì¼ë°˜,
+Electron,ì¼ë ‰íŠ¸ë¡ ,,ê³ ìœ ,
+Emmet,ì—ë°‹,,ê³ ìœ ,
+endpoint,ì—”ë“œí¬ì¸íŠ¸,,ì¼ë°˜,
+express.js,ìµìŠ¤í”„ë ˆìŠ¤,,ê³ ìœ ,
+Firefox,íŒŒì´ì–´í­ìŠ¤,,ê³ ìœ ,
+flexbox,í”Œë ‰ìŠ¤ë°•ìŠ¤,,ì¼ë°˜,CSS
+focus,í¬ì»¤ìŠ¤,,ì¼ë°˜,
+font,ê¸€ê¼´,,ì¼ë°˜,
+framework,í”„ë ˆì„ì›Œí¬,,ì¼ë°˜,
+function,í•¨ìˆ˜,,ì¼ë°˜,
+generator,ìƒì„±ê¸°,,ì¼ë°˜,
+GitHub,ê¹ƒí—ˆë¸Œ,,ê³ ìœ ,
+Golang,ê³ ë­,,ê³ ìœ ,
+gradient,ê·¸ë ˆì´ë””ì–¸íŠ¸,,ì¼ë°˜,CSS
+grid,ê·¸ë¦¬ë“œ,,ì¼ë°˜,CSS
+height,ë†’ì´,,ì¼ë°˜,CSS
+Heroku,í—¤ë¡œì¿ ,,ê³ ìœ ,
+hook,í›…,,ì¼ë°˜,ë¦¬ì•¡íŠ¸
+hydration,ìˆ˜í™”,,ì¼ë°˜,ë„¥ìŠ¤íŠ¸
+import,ê°€ì ¸ì˜¤ë‹¤,,ì¼ë°˜,
+interpolation,ë³´ê°„ë²•,,ì¼ë°˜,
+iterator,ë°˜ë³µì,,ì¼ë°˜,
+Javascript,ìë°”ìŠ¤í¬ë¦½íŠ¸,,ê³ ìœ ,
+jQuery,ì œì´ì¿¼ë¦¬,,ê³ ìœ ,
+layout,ë ˆì´ì•„ì›ƒ,,ì¼ë°˜,CSS
+mapping,ë§¤í•‘,,ì¼ë°˜,
+margin,ë§ˆì§„,,ì¼ë°˜,CSS
+method,ë©”ì„œë“œ,,ì¼ë°˜,
+middleware,ë¯¸ë“¤ì›¨ì–´,,ì¼ë°˜,
+naming,ëª…ëª…,,ì¼ë°˜,
+navigation,ë‚´ë¹„ê²Œì´ì…˜,,ì¼ë°˜,
+Next.js,ë„¥ìŠ¤íŠ¸,,ê³ ìœ ,
+Node.js,ë…¸ë“œ,,ê³ ìœ ,
+padding,íŒ¨ë”©,,ì¼ë°˜,CSS
+parsing,íŒŒì‹±,,ì¼ë°˜,
+PostgreSQL,í¬ìŠ¤íŠ¸ê·¸ë ˆSQL,,ê³ ìœ ,
+Prettier,í”„ë¦¬í‹°ì–´,,ê³ ìœ ,
+Prisma,í”„ë¦¬ì¦ˆë§ˆ,,ê³ ìœ ,
+production,í”„ë¡œë•ì…˜,,ì¼ë°˜,
+promise,í”„ë¼ë¯¸ìŠ¤,,ì¼ë°˜,ìë°”ìŠ¤í¬ë¦½íŠ¸
+prop,í”„ë¡­,,ì¼ë°˜,ë¦¬ì•¡íŠ¸
+property,"í”„ë¡œí¼í‹°, ì†ì„±",ì›ë˜ ëœ»ì€ ì†ì„±ì´ì§€ë§Œ attributeì™€ì˜ êµ¬ë¶„ì„ ìœ„í•´ í”„ë¡œí¼í‹°ë¥¼ ì‚¬ìš©,ì¼ë°˜,ë¦¬ì•¡íŠ¸
+provider,ì œê³µì,,ì¼ë°˜,
+pseudo,"ì˜ì‚¬, ê°€ìƒ",,ì¼ë°˜,
+query string,ì¿¼ë¦¬ ë¬¸ìì—´,,ì¼ë°˜,
+React,ë¦¬ì•¡íŠ¸,,ê³ ìœ ,
+redirection,ë¦¬ë””ë ‰ì…˜,ë¦¬ë‹¤ì´ë ‰ì…˜ìœ¼ë¡œë„ ë§ì´ ì‚¬ìš©,ì¼ë°˜,
+Redux,ë¦¬ë•ìŠ¤,,ê³ ìœ ,
+reference,ë ˆí¼ëŸ°ìŠ¤,,ì¼ë°˜,
+resolve,ì´í–‰í•˜ë‹¤,,ì¼ë°˜,ìë°”ìŠ¤í¬ë¦½íŠ¸
+REST,REST,,ì¼ë°˜,
+RESTful,RESTful,,ì¼ë°˜,
+Selenium,ì…€ë ˆëŠ„,,ê³ ìœ ,
+session,ì„¸ì…˜,,ì¼ë°˜,
+shorthand,ì•½ì¹­,,ì¼ë°˜,
+signature,ì‹œê·¸ë‹ˆì²˜,,ì¼ë°˜,
+snippet,ìŠ¤ë‹ˆí«,,ì¼ë°˜,
+storage,ìŠ¤í† ë¦¬ì§€,,ì¼ë°˜,
+transition,íŠ¸ëœì§€ì…˜,,ì¼ë°˜,CSS
+troubleshooting,ë¬¸ì œ í•´ê²°,,ì¼ë°˜,
+TypeORM,íƒ€ì…ORM,,ê³ ìœ ,
+TypeScript,íƒ€ì…ìŠ¤í¬ë¦½íŠ¸,,ê³ ìœ ,
+typography,íƒ€ì´í¬ê·¸ë˜í”¼,,ì¼ë°˜,
+Ubuntu,ìš°ë¶„íˆ¬,,ê³ ìœ ,
+usecase,ìœ ìŠ¤ ì¼€ì´ìŠ¤,,ì¼ë°˜,
+validation,ê²€ì¦,,ì¼ë°˜,
+variation,ë³€í˜•,,ì¼ë°˜,
+Vercel,ë² ë¥´ì…€,,ê³ ìœ ,
+viewport,ë·°í¬íŠ¸,,ì¼ë°˜,
+voice over,ë³´ì´ìŠ¤ì˜¤ë²„,,ì¼ë°˜,
+WebDriver,ì›¹ë“œë¼ì´ë²„,,ê³ ìœ ,
+width,ë„ˆë¹„,,ì¼ë°˜,CSS
+workflow,ì›Œí¬í”Œë¡œ,,ì¼ë°˜,
+Yup,ì—½,,ê³ ìœ ,
