@@ -1,4 +1,5 @@
-import { Container, Heading, Link } from '@chakra-ui/react';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { Container, Heading, HStack, Link } from '@chakra-ui/react';
 import {
   Table,
   Thead,
@@ -76,9 +77,17 @@ const Home: NextPage = () => {
       </main>
       <footer>
         <Container centerContent maxW="container.xl" my={3}>
-          <Link href="https://autroshot.github.io/docs-repository/" isExternal>
-            문서 저장소
-          </Link>
+          <HStack spacing="3rem">
+            <Link
+              href="https://autroshot.github.io/docs-repository/"
+              isExternal
+            >
+              문서 저장소 <ExternalLinkIcon verticalAlign="0" />
+            </Link>
+            <Link href="#" isExternal>
+              GitHub <ExternalLinkIcon verticalAlign="0" />
+            </Link>
+          </HStack>
         </Container>
       </footer>
     </>
