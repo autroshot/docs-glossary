@@ -1,4 +1,4 @@
-import { Container, Heading } from '@chakra-ui/react';
+import { Container, Heading, Link } from '@chakra-ui/react';
 import {
   Table,
   Thead,
@@ -10,8 +10,6 @@ import {
 } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   return (
@@ -76,17 +74,12 @@ const Home: NextPage = () => {
           </TableContainer>
         </Container>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+      <footer>
+        <Container centerContent maxW="container.xl" my={3}>
+          <Link href="https://autroshot.github.io/docs-repository/" isExternal>
+            문서 저장소
+          </Link>
+        </Container>
       </footer>
     </>
   );
