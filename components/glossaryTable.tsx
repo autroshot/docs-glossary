@@ -62,3 +62,15 @@ export default function GlossaryTable() {
     </TableContainer>
   );
 }
+
+interface Props {
+  terms: Term[];
+}
+
+interface Term {
+  english: string;
+  korean: string;
+  type: '일반' | '고유';
+  field: string;
+  comment: string;
+}

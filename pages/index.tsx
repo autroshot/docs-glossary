@@ -22,7 +22,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import GlossaryTable from '../components/glossaryTable';
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
     <>
       <Head>
@@ -61,6 +61,8 @@ const Home: NextPage = () => {
       </footer>
     </>
   );
-};
+}
 
-export default Home;
+export async function getStaticProps() {
+  // TODO: CSV 파일에서 데이터 읽기
+}
