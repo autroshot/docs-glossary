@@ -16,30 +16,12 @@ export default function Home({
       <Head>
         <title>용어집</title>
       </Head>
-      <nav>
-        <Navbar />
-      </nav>
       <main>
         <Container centerContent maxW="container.xl" my={5}>
           <Heading my={3}>용어집</Heading>
           <GlossaryTable terms={terms} />
         </Container>
       </main>
-      <footer>
-        <Center py={8} bgColor="#303846" color="#EBEDF0">
-          <HStack spacing="3rem">
-            <Link
-              href="https://autroshot.github.io/docs-repository/"
-              isExternal
-            >
-              문서 저장소 <ExternalLinkIcon verticalAlign="0" />
-            </Link>
-            <Link href="#" isExternal>
-              GitHub <ExternalLinkIcon verticalAlign="0" />
-            </Link>
-          </HStack>
-        </Center>
-      </footer>
     </>
   );
 }
