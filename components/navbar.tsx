@@ -1,4 +1,4 @@
-import { MoonIcon } from '@chakra-ui/icons';
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { Box, Flex, IconButton, Spacer, useColorMode } from '@chakra-ui/react';
 
 export default function Navbar() {
@@ -11,7 +11,7 @@ export default function Navbar() {
       <Spacer />
       <IconButton
         aria-label="다크 모드"
-        icon={<MoonIcon />}
+        icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
         onClick={toggleColorMode}
       />
     </Flex>
