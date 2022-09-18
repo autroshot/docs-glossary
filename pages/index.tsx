@@ -1,20 +1,12 @@
-import { ExternalLinkIcon, MoonIcon } from '@chakra-ui/icons';
-import {
-  Box,
-  Container,
-  Flex,
-  Heading,
-  HStack,
-  IconButton,
-  Link,
-  Spacer,
-} from '@chakra-ui/react';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { Container, Heading, HStack, Link } from '@chakra-ui/react';
 import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import GlossaryTable, { Term } from '../components/glossaryTable';
 import { readFile } from 'fs/promises';
 import Papa from 'papaparse';
 import path from 'path';
+import Navbar from '../components/navbar';
 
 export default function Home({
   terms,
@@ -27,12 +19,7 @@ export default function Home({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav>
-        <Flex px={6} py={4} gap="5" align="center">
-          <Box>용어집</Box>
-          <Box>출처</Box>
-          <Spacer />
-          <IconButton aria-label="다크 모드" icon={<MoonIcon />} />
-        </Flex>
+        <Navbar />
       </nav>
       <main>
         <Container centerContent maxW="container.xl" my={3}>
