@@ -30,8 +30,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav>
-        <Flex p={5}>
+        <Flex px={6} py={4} gap="5" align="center">
           <Box>용어집</Box>
+          <Box>출처</Box>
           <Spacer />
           <IconButton aria-label="다크 모드" icon={<MoonIcon />} />
         </Flex>
