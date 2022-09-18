@@ -5,7 +5,14 @@ export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Flex px={6} py={4} gap="5" align="center">
+    <Flex
+      px={6}
+      py={3}
+      gap="5"
+      align="center"
+      boxShadow="0px 1px 2px 0px #0000001a"
+      bg={colorMode === 'dark' ? '#242526' : undefined}
+    >
       <Box>용어집</Box>
       <Box>출처</Box>
       <Spacer />

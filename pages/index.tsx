@@ -1,5 +1,5 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { Container, Heading, HStack, Link } from '@chakra-ui/react';
+import { Center, Container, Heading, HStack, Link } from '@chakra-ui/react';
 import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import GlossaryTable, { Term } from '../components/glossaryTable';
@@ -22,13 +22,13 @@ export default function Home({
         <Navbar />
       </nav>
       <main>
-        <Container centerContent maxW="container.xl" my={3}>
-          <Heading>용어집</Heading>
+        <Container centerContent maxW="container.xl" my={5}>
+          <Heading my={3}>용어집</Heading>
           <GlossaryTable terms={terms} />
         </Container>
       </main>
       <footer>
-        <Container centerContent maxW="container.xl" my={3}>
+        <Center py={8} bgColor="#303846" color="#EBEDF0">
           <HStack spacing="3rem">
             <Link
               href="https://autroshot.github.io/docs-repository/"
@@ -40,7 +40,7 @@ export default function Home({
               GitHub <ExternalLinkIcon verticalAlign="0" />
             </Link>
           </HStack>
-        </Container>
+        </Center>
       </footer>
     </>
   );
