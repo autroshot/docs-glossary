@@ -67,7 +67,7 @@ interface Props {
   terms: Term[];
 }
 
-interface Term {
+export interface Term {
   english: string;
   korean: string;
   type: '일반' | '고유';

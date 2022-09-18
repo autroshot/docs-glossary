@@ -9,10 +9,13 @@ import {
   Link,
   Spacer,
 } from '@chakra-ui/react';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
-import GlossaryTable from '../components/glossaryTable';
+import GlossaryTable, { Term } from '../components/glossaryTable';
 
-export default function Home() {
+export default function Home({
+  terms,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <Head>
@@ -55,4 +58,29 @@ export default function Home() {
 
 export async function getStaticProps() {
   // TODO: CSV 파일에서 데이터 읽기
+  const terms: Term[] = [
+    {
+      english: 'application',
+      korean: '앱, 애플리케이션',
+      type: '일반',
+      field: '',
+      comment: '',
+    },
+    {
+      english: 'application',
+      korean: '앱, 애플리케이션',
+      type: '일반',
+      field: '',
+      comment: '',
+    },
+    {
+      english: 'application',
+      korean: '앱, 애플리케이션',
+      type: '일반',
+      field: '',
+      comment: '',
+    },
+  ];
+
+  return { props: { terms } };
 }
