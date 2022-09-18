@@ -34,7 +34,7 @@ export default function Home({
       <main>
         <Container centerContent maxW="container.xl" my={3}>
           <Heading>용어집</Heading>
-          <GlossaryTable />
+          <GlossaryTable terms={terms} />
         </Container>
       </main>
       <footer>
@@ -60,21 +60,21 @@ export async function getStaticProps() {
   // TODO: CSV 파일에서 데이터 읽기
   const terms: Term[] = [
     {
-      english: 'application',
+      english: 'application1',
       korean: '앱, 애플리케이션',
       type: '일반',
       field: '',
       comment: '',
     },
     {
-      english: 'application',
+      english: 'application2',
       korean: '앱, 애플리케이션',
       type: '일반',
       field: '',
       comment: '',
     },
     {
-      english: 'application',
+      english: 'application3',
       korean: '앱, 애플리케이션',
       type: '일반',
       field: '',

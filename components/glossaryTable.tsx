@@ -8,7 +8,7 @@ import {
   TableContainer,
 } from '@chakra-ui/react';
 
-export default function GlossaryTable() {
+export default function GlossaryTable({ terms }: Props) {
   return (
     <TableContainer>
       <Table variant="simple" my={3}>
@@ -22,41 +22,17 @@ export default function GlossaryTable() {
           </Tr>
         </Thead>
         <Tbody>
-          <Tr>
-            <Td>application</Td>
-            <Td>앱, 애플리케이션</Td>
-            <Td>일반</Td>
-            <Td></Td>
-            <Td></Td>
-          </Tr>
-          <Tr>
-            <Td>assert</Td>
-            <Td>단언하다</Td>
-            <Td>일반</Td>
-            <Td>테스트</Td>
-            <Td></Td>
-          </Tr>
-          <Tr>
-            <Td>assertion</Td>
-            <Td>단언</Td>
-            <Td>일반</Td>
-            <Td>테스트</Td>
-            <Td></Td>
-          </Tr>
-          <Tr>
-            <Td>attribute</Td>
-            <Td>속성</Td>
-            <Td>일반</Td>
-            <Td>CSS</Td>
-            <Td></Td>
-          </Tr>
-          <Tr>
-            <Td>Edge</Td>
-            <Td>엣지</Td>
-            <Td>고유</Td>
-            <Td></Td>
-            <Td>https://www.microsoft.com/ko-kr/edge</Td>
-          </Tr>
+          {terms.map((term) => {
+            return (
+              <Tr key={term.english}>
+                <Td>{term.english}</Td>
+                <Td>{term.korean}</Td>
+                <Td>{term.type}</Td>
+                <Td>{term.field}</Td>
+                <Td>{term.comment}</Td>
+              </Tr>
+            );
+          })}
         </Tbody>
       </Table>
     </TableContainer>
