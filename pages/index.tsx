@@ -9,16 +9,6 @@ import {
   Link,
   Spacer,
 } from '@chakra-ui/react';
-import {
-  Table,
-  Thead,
-  Tbody,
-  Tr,
-  Th,
-  Td,
-  TableContainer,
-} from '@chakra-ui/react';
-import type { NextPage } from 'next';
 import Head from 'next/head';
 import GlossaryTable from '../components/glossaryTable';
 
