@@ -1,0 +1,96 @@
+application,"앱, 애플리케이션",,일반,
+assert,단언하다,,일반,테스트
+assertion,단언,,일반,테스트
+attribute,속성,,일반,CSS
+background,배경,,일반,CSS
+boilerplate,보일러플레이트,,일반,
+boolean,불린형,,일반,
+Chai,차이,,고유,
+Chakra UI,차크라 UI,,고유,
+chunk,청크,,일반,
+component,컴포넌트,,일반,리액트
+composition,합성,,일반,리액트
+context,컨텍스트,,일반,
+convention,컨벤션,,일반,
+custom,"사용자 정의, 커스텀",,일반,
+customize,"사용자 정의하다, 커스터마이즈하다",,일반,
+dark mode,다크 모드,,일반,
+devops,데브옵스,,일반,
+directory,디렉터리,,일반,
+double click,더블 클릭,,일반,
+Edge,엣지,https://www.microsoft.com/ko-kr/edge,고유,
+edge,에지,,일반,
+Electron,일렉트론,,고유,
+Emmet,에밋,,고유,
+endpoint,엔드포인트,,일반,
+express.js,익스프레스,,고유,
+Firefox,파이어폭스,,고유,
+flexbox,플렉스박스,,일반,CSS
+focus,포커스,,일반,
+font,글꼴,,일반,
+framework,프레임워크,,일반,
+function,함수,,일반,
+generator,생성기,,일반,
+GitHub,깃허브,,고유,
+Golang,고랭,,고유,
+gradient,그레이디언트,,일반,CSS
+grid,그리드,,일반,CSS
+height,높이,,일반,CSS
+Heroku,헤로쿠,,고유,
+hook,훅,,일반,리액트
+hydration,수화,,일반,넥스트
+import,가져오다,,일반,
+interpolation,보간법,,일반,
+iterator,반복자,,일반,
+Javascript,자바스크립트,,고유,
+jQuery,제이쿼리,,고유,
+layout,레이아웃,,일반,CSS
+mapping,매핑,,일반,
+margin,마진,,일반,CSS
+method,메서드,,일반,
+middleware,미들웨어,,일반,
+naming,명명,,일반,
+navigation,내비게이션,,일반,
+Next.js,넥스트,,고유,
+Node.js,노드,,고유,
+padding,패딩,,일반,CSS
+parsing,파싱,,일반,
+PostgreSQL,포스트그레SQL,,고유,
+Prettier,프리티어,,고유,
+Prisma,프리즈마,,고유,
+production,프로덕션,,일반,
+promise,프라미스,,일반,자바스크립트
+prop,프롭,,일반,리액트
+property,"프로퍼티, 속성",원래 뜻은 속성이지만 attribute와의 구분을 위해 프로퍼티를 사용,일반,리액트
+provider,제공자,,일반,
+pseudo,"의사, 가상",,일반,
+query string,쿼리 문자열,,일반,
+React,리액트,,고유,
+redirection,리디렉션,리다이렉션으로도 많이 사용,일반,
+Redux,리덕스,,고유,
+reference,레퍼런스,,일반,
+resolve,이행하다,,일반,자바스크립트
+REST,REST,,일반,
+RESTful,RESTful,,일반,
+Selenium,셀레늄,,고유,
+session,세션,,일반,
+shorthand,약칭,,일반,
+signature,시그니처,,일반,
+snippet,스니펫,,일반,
+storage,스토리지,,일반,
+transition,트랜지션,,일반,CSS
+troubleshooting,문제 해결,,일반,
+TypeORM,타입ORM,,고유,
+TypeScript,타입스크립트,,고유,
+typography,타이포그래피,,일반,
+Ubuntu,우분투,,고유,
+usecase,유스 케이스,,일반,
+validation,검증,,일반,
+variation,변형,,일반,
+Vercel,베르셀,,고유,
+viewport,뷰포트,,일반,
+voice over,보이스오버,,일반,
+WebDriver,웹드라이버,,고유,
+width,너비,,일반,CSS
+workflow,워크플로,,일반,
+Yup,엽,,고유,
