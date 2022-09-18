@@ -1,12 +1,10 @@
-import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { Center, Container, Heading, HStack, Link } from '@chakra-ui/react';
+import { Container, Heading } from '@chakra-ui/react';
 import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import GlossaryTable, { Term } from '../components/glossaryTable';
 import { readFile } from 'fs/promises';
 import Papa from 'papaparse';
 import path from 'path';
-import Navbar from '../components/navbar';
 
 export default function Home({
   terms,
