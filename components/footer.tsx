@@ -8,7 +8,7 @@ export default function Footer() {
         <Link href="https://autroshot.github.io/docs-repository/" isExternal>
           문서 저장소 <ExternalLinkIcon verticalAlign="0" />
         </Link>
-        <Link href="#" isExternal>
+        <Link href="https://autroshot.github.io/docs-repository/" isExternal>
           GitHub <ExternalLinkIcon verticalAlign="0" />
         </Link>
       </HStack>
