@@ -14,12 +14,10 @@ export default function Home({
       <Head>
         <title>용어집</title>
       </Head>
-      <main>
-        <Container centerContent maxW="container.xl" my={5}>
-          <Heading my={3}>용어집</Heading>
-          <GlossaryTable terms={terms} />
-        </Container>
-      </main>
+      <Container centerContent maxW="container.xl" my={5}>
+        <Heading my={3}>용어집</Heading>
+        <GlossaryTable terms={terms} />
+      </Container>
     </>
   );
 }
