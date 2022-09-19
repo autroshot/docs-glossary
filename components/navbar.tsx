@@ -1,5 +1,6 @@
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import { Box, Flex, IconButton, Spacer, useColorMode } from '@chakra-ui/react';
+import { Flex, IconButton, Spacer, useColorMode } from '@chakra-ui/react';
+import Link from 'next/link';
 
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -13,8 +14,8 @@ export default function Navbar() {
       boxShadow="0px 1px 2px 0px #0000001a"
       bg={colorMode === 'dark' ? '#242526' : undefined}
     >
-      <Box>용어집</Box>
-      <Box>출처</Box>
+      <Link href="/">용어집</Link>
+      <Link href="/reference">출처</Link>
       <Spacer />
       <IconButton
         aria-label="다크 모드"
