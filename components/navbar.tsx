@@ -20,7 +20,7 @@ export default function Navbar() {
       <Link href="https://autroshot.github.io/docs-repository/" isExternal>
         문서 저장소 <ExternalLinkIcon verticalAlign="0" />
       </Link>
-      <Link href="https://autroshot.github.io/docs-repository/" isExternal>
+      <Link href="https://github.com/autroshot/docs-glossary" isExternal>
         GitHub <ExternalLinkIcon verticalAlign="0" />
       </Link>
       <IconButton
