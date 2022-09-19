@@ -1,6 +1,6 @@
 import { ExternalLinkIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
-import { Flex, IconButton, Spacer, useColorMode } from '@chakra-ui/react';
-import Link from 'next/link';
+import { Flex, IconButton, Link, Spacer, useColorMode } from '@chakra-ui/react';
+import NextLink from 'next/link';
 
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -14,18 +14,14 @@ export default function Navbar() {
       boxShadow="0px 1px 2px 0px #0000001a"
       bg={colorMode === 'dark' ? '#242526' : undefined}
     >
-      <Link href="/">용어집</Link>
-      <Link href="/reference">출처</Link>
+      <NextLink href="/">용어집</NextLink>
+      <NextLink href="/reference">참고</NextLink>
       <Spacer />
-      <Link href="https://autroshot.github.io/docs-repository/">
-        <a>
-          문서 저장소 <ExternalLinkIcon verticalAlign="0" />
-        </a>
+      <Link href="https://autroshot.github.io/docs-repository/" isExternal>
+        문서 저장소 <ExternalLinkIcon verticalAlign="0" />
       </Link>
-      <Link href="https://autroshot.github.io/docs-repository/">
-        <a>
-          GitHub <ExternalLinkIcon verticalAlign="0" />
-        </a>
+      <Link href="https://autroshot.github.io/docs-repository/" isExternal>
+        GitHub <ExternalLinkIcon verticalAlign="0" />
       </Link>
       <IconButton
         aria-label="다크 모드"
