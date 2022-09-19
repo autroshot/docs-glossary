@@ -1,3 +1,4 @@
+import { Container } from '@chakra-ui/react';
 import Head from 'next/head';
 
 export default function Reference() {
@@ -6,7 +7,9 @@ export default function Reference() {
       <Head>
         <title>출처</title>
       </Head>
-      <div>출처</div>
+      <Container maxW="container.xl" my={5}>
+        출처
+      </Container>
     </>
   );
 }
