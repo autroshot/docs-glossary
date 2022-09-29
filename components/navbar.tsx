@@ -1,5 +1,12 @@
 import { ExternalLinkIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
-import { Flex, IconButton, Link, Spacer, useColorMode } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  IconButton,
+  Link,
+  Spacer,
+  useColorMode,
+} from '@chakra-ui/react';
 import NextLink from 'next/link';
 
 export default function Navbar() {
@@ -11,12 +18,13 @@ export default function Navbar() {
       py={3}
       gap="5"
       align="center"
+      direction={{ base: 'column', md: 'row' }}
       boxShadow="0px 1px 2px 0px #0000001a"
       bg={colorMode === 'dark' ? '#242526' : undefined}
     >
       <NextLink href="/">용어집</NextLink>
       <NextLink href="/reference">참고</NextLink>
-      <Spacer />
+      <Spacer display={{ base: 'none', md: 'block' }} />
       <Link href="https://autroshot.github.io/docs-repository/" isExternal>
         문서 저장소 <ExternalLinkIcon verticalAlign="0" />
       </Link>
