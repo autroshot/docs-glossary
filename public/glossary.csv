@@ -1,4 +1,6 @@
-﻿Angular,앵귤러,,고유,
+﻿alias,별칭,,일반,
+Angular,앵귤러,,고유,
+anonymous,익명의,,일반,
 application,"앱, 애플리케이션",,일반,
 assert,단언하다,,일반,테스트
 assertion,단언,,일반,테스트
@@ -28,6 +30,7 @@ custom,"사용자 정의, 커스텀",,일반,
 customize,"사용자 정의하다, 커스터마이즈하다",,일반,
 dark mode,다크 모드,,일반,
 decorator,데코레이터,,일반,타입스크립트
+destructuring,구조 분해,,일반,자바스크립트
 devops,데브옵스,,일반,
 directory,디렉터리,,일반,
 discriminated union,구별되는 합집합,,일반,타입스크립트
@@ -41,6 +44,7 @@ Emmet,에밋,,고유,
 endpoint,엔드포인트,,일반,
 Ethereum,이더리움,,고유,블록체인
 express.js,익스프레스,,고유,
+expression,표현식,,일반,
 falsy,거짓 같은 값,,일반,자바스크립트
 Firefox,파이어폭스,,고유,
 flexbox,플렉스박스,,일반,CSS
@@ -62,10 +66,11 @@ Heroku,헤로쿠,,고유,
 hook,훅,,일반,리액트
 hydration,수화,,일반,넥스트
 import,가져오다,,일반,
-index,"인덱스, 색인",,일반,
+index,색인,,일반,
 instance,인스턴스,,일반,자바스크립트
 interpolation,보간법,,일반,
 intersection,교집합,,일반,타입스크립트
+iterable,반복 가능한 (객체),,일반,자바스크립트
 iterator,반복자,,일반,
 Javascript,자바스크립트,,고유,
 Jest,제스트,,고유,
@@ -74,6 +79,7 @@ layout,레이아웃,,일반,CSS
 lint,린트,,일반,
 linter,린터,,일반,
 literal,리터럴,,일반,
+lodash,로대시,,고유,
 logic,논리,,일반,
 mapping,매핑,,일반,
 margin,마진,,일반,CSS
@@ -84,6 +90,7 @@ message,메시지,,일반,
 method,메서드,,일반,
 middleware,미들웨어,,일반,
 mock,모조하다,,일반,테스트
+modifier,수정자,,일반,
 module,모듈,,일반,자바스크립트
 MySQL,마이SQL,,고유,
 naming,명명,,일반,
@@ -91,7 +98,8 @@ navigation,내비게이션,,일반,
 Next.js,넥스트,,고유,
 NextAuth.js,넥스트인증,,고유,
 Node.js,노드,,고유,
-optional,선택적,,일반,
+operator,연산자,,일반,
+optional,"선택적, 선택 사항",,일반,
 padding,패딩,,일반,CSS
 parameter,매개변수,,일반,
 Parcel,파설,,고유,
@@ -117,7 +125,7 @@ reference,레퍼런스,,일반,
 repository,저장소,,일반,
 required,필수,,일반,
 resolve,이행하다,,일반,자바스크립트
-resolver,리졸버,,,
+resolver,리졸버,,일반,
 REST,REST,,일반,
 RESTful,RESTful,,일반,
 scope,스코프,,일반,자바스크립트
@@ -160,4 +168,5 @@ WebDriver,웹드라이버,,고유,
 webpack,웹팩,,고유,
 width,너비,,일반,CSS
 workflow,워크플로,,일반,
+wrapper,래퍼,,일반,
 Yup,엽,,고유,
