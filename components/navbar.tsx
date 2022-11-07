@@ -1,12 +1,5 @@
 import { ExternalLinkIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
-import {
-  Box,
-  Flex,
-  IconButton,
-  Link,
-  Spacer,
-  useColorMode,
-} from '@chakra-ui/react';
+import { Flex, IconButton, Link, Spacer, useColorMode } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
 export default function Navbar() {
