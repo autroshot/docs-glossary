@@ -9,7 +9,7 @@ export default function Footer() {
           문서 저장소 <ExternalLinkIcon verticalAlign="0" />
         </Link>
         <Link href="https://github.com/autroshot/docs-glossary" isExternal>
-          GitHub <ExternalLinkIcon verticalAlign="0" />
+          깃허브 <ExternalLinkIcon verticalAlign="0" />
         </Link>
       </HStack>
     </Center>
