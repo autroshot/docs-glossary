@@ -12,12 +12,17 @@ import { readFile } from 'fs/promises';
 import Papa from 'papaparse';
 import path from 'path';
 import { SearchIcon } from '@chakra-ui/icons';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Home({
   terms,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [searchWord, setSearchWord] = useState('');
+  const inputElement = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    inputElement.current?.focus();
+  }, []);
 
   let filteredTerms: Term[] = [];
   if (searchWord.length === 0) {
@@ -41,6 +46,7 @@ export default function Home({
         <InputGroup my={3}>
           <Input
             placeholder="검색할 용어의 영어나 한국어를 입력하세요."
+            ref={inputElement}
             value={searchWord}
             onChange={(event) => setSearchWord(event.currentTarget.value)}
           />
