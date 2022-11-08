@@ -40,7 +40,7 @@ export default function Home({
         <Heading my={3}>용어집</Heading>
         <InputGroup my={3}>
           <Input
-            placeholder="검색할 영어나 한국어를 입력하세요."
+            placeholder="검색할 용어의 영어나 한국어를 입력하세요."
             value={searchWord}
             onChange={(event) => setSearchWord(event.currentTarget.value)}
           />
