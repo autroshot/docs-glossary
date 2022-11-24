@@ -2,6 +2,7 @@
 Angular,앵귤러,,고유,
 anonymous,익명의,,일반,
 application,"앱, 애플리케이션",,일반,
+argument,인수,,일반,
 assert,단언하다,,일반,테스트
 assertion,단언,,일반,테스트
 asset,자산,,일반,
@@ -9,6 +10,7 @@ assignment,할당,,일반,
 attribute,속성,,일반,CSS
 Babel,바벨,,고유,
 background,배경,,일반,CSS
+block,블록,,일반,
 boilerplate,보일러플레이트,,일반,
 boolean,"불린, 불리언, 부울, 불",,일반,
 browser,브라우저,,일반,
@@ -22,6 +24,7 @@ class,클래스,,일반,자바스크립트
 command line,명령 행,,일반,
 component,컴포넌트,,일반,리액트
 composition,합성,,일반,리액트
+constraint,"제약, 제약 조건",,,
 content,콘텐츠,,일반,
 context,컨텍스트,,일반,
 convention,컨벤션,,일반,
@@ -42,6 +45,7 @@ edge,에지,,일반,
 Electron,일렉트론,,고유,
 Emmet,에밋,,고유,
 endpoint,엔드포인트,,일반,
+entity,개체,,일반,
 Ethereum,이더리움,,고유,블록체인
 express.js,익스프레스,,고유,
 expression,표현식,,일반,
@@ -121,6 +125,7 @@ query string,쿼리 문자열,,일반,
 React,리액트,,고유,
 redirection,리디렉션,리다이렉션으로도 많이 사용,일반,
 Redux,리덕스,,고유,
+refactoring,리팩터링,,일반,
 reference,레퍼런스,,일반,
 repository,저장소,,일반,
 required,필수,,일반,
@@ -134,14 +139,19 @@ session,세션,,일반,
 setter,설정자,,일반,
 shorthand,약칭,,일반,
 signature,시그니처,,일반,
+single source of truth,단일 진실 공급원,,일반,
 snapshot,스냅숏,,일반,테스트
 snippet,스니펫,,일반,
 solution,솔루션,,일반,
+spread syntax,전개 문법,,일반,자바스크립트
 SQLite,SQL라이트,,고유,
 storage,스토리지,,일반,
 superset,상위 집합,,일반,
+syntactic sugar,문법 설탕,,일반,
 syntax,문법,,일반,
 template,템플릿,,일반,
+timeout,타임아웃,,일반,
+timestamp,타임스탬프,,일반,
 transition,트랜지션,,일반,CSS
 transpile,트랜스파일,,일반,
 troubleshooting,문제 해결,,일반,
