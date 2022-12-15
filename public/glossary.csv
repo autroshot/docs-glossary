@@ -13,6 +13,7 @@ background,배경,,일반,CSS
 block,블록,,일반,
 boilerplate,보일러플레이트,,일반,
 boolean,"불린, 불리언, 부울, 불",,일반,
+branch,"분기, 브랜치",,일반,
 browser,브라우저,,일반,
 callback,콜백,,일반,
 caveat,주의 사항,,일반,
@@ -80,6 +81,7 @@ Javascript,자바스크립트,,고유,
 Jest,제스트,,고유,
 jQuery,제이쿼리,,고유,
 layout,레이아웃,,일반,CSS
+legacy,레거시,,일반,
 lint,린트,,일반,
 linter,린터,,일반,
 literal,리터럴,,일반,
@@ -113,6 +115,7 @@ PostgreSQL,포스트그레SQL,,고유,
 predicate,단언하다,,일반,타입스크립트
 preprocessor,전처리기,,일반,
 Prettier,프리티어,,고유,
+preview,미리보기,,일반,
 primitive,원시값,,일반,자바스크립트
 Prisma,프리즈마,,고유,
 production,프로덕션,,일반,
@@ -143,6 +146,7 @@ single source of truth,단일 진실 공급원,,일반,
 snapshot,스냅숏,,일반,테스트
 snippet,스니펫,,일반,
 solution,솔루션,,일반,
+specification,명세서,,일반,
 spread syntax,전개 문법,,일반,자바스크립트
 SQLite,SQL라이트,,고유,
 storage,스토리지,,일반,
