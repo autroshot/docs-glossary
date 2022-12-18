@@ -30,7 +30,7 @@ export default function GlossaryTable({ terms }: Props) {
                 <Td>{term.korean}</Td>
                 <Td>{term.type}</Td>
                 <Td>{term.field}</Td>
-                <Td>{term.comment}</Td>
+                <Td>{term.description}</Td>
               </Tr>
             );
           })}
@@ -47,7 +47,7 @@ interface Props {
 export interface Term {
   english: string;
   korean: string;
-  type: '일반' | '고유';
+  type: string;
   field: string;
-  comment: string;
+  description: string;
 }

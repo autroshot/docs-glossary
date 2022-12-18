@@ -5,35 +5,45 @@ import {
   InputGroup,
   InputRightElement,
 } from '@chakra-ui/react';
-import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import GlossaryTable, { Term } from '../components/glossaryTable';
-import { readFile } from 'fs/promises';
-import Papa from 'papaparse';
-import path from 'path';
 import { SearchIcon } from '@chakra-ui/icons';
 import { useEffect, useRef, useState } from 'react';
+import axios from 'axios';
+import { GetResponseData } from './api/get-terms';
 
-export default function Home({
-  terms,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home() {
+  const [terms, setTerms] = useState<null | Term[]>(null);
   const [searchWord, setSearchWord] = useState('');
   const inputElement = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    axios
+      .get<GetResponseData>('/api/get-terms')
+      .then(async (res) => {
+        if (res.data) {
+          setTerms(res.data);
+        }
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   useEffect(() => {
     inputElement.current?.focus();
   }, []);
 
   let filteredTerms: Term[] = [];
-  if (searchWord.length === 0) {
-    filteredTerms = [...terms];
-  } else {
-    filteredTerms = terms.filter((term) => {
-      return (
-        term.english.toLowerCase().includes(searchWord.toLowerCase()) ||
-        term.korean.includes(searchWord)
-      );
-    });
+  if (terms !== null) {
+    if (searchWord.length === 0) {
+      filteredTerms = [...terms];
+    } else {
+      filteredTerms = terms.filter((term) => {
+        return (
+          term.english.toLowerCase().includes(searchWord.toLowerCase()) ||
+          term.korean.includes(searchWord)
+        );
+      });
+    }
   }
 
   return (
@@ -58,32 +68,4 @@ export default function Home({
       </Container>
     </>
   );
-}
-
-export async function getStaticProps() {
-  const terms: Term[] = [];
-
-  const file = await readFile(
-    path.join(process.cwd(), 'public', '/glossary.csv'),
-    'utf-8'
-  );
-
-  Papa.parse<string[]>(file, {
-    complete(results) {
-      if (results.data.length !== 0) {
-        results.data.map((term, index) => {
-          if (index >= results.data.length - 1) return;
-          terms.push({
-            english: term[0] ?? '',
-            korean: term[1] ?? '',
-            comment: term[2] ?? '',
-            type: (term[3] ?? '') as '일반' | '고유',
-            field: term[4] ?? '',
-          });
-        });
-      }
-    },
-  });
-
-  return { props: { terms } };
 }
