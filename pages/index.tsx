@@ -9,11 +9,11 @@ import {
   Tr,
 } from '@chakra-ui/react';
 import Head from 'next/head';
-import GlossaryTable, { Term } from '../components/glossaryTable';
+import GlossaryTable from '../components/glossaryTable';
 import { SearchIcon } from '@chakra-ui/icons';
 import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
-import { GetResponseData } from './api/get-terms';
+import { GetResponseData, Term } from './api/get-terms';
 
 export default function Home() {
   const [terms, setTerms] = useState<null | Term[]>(null);

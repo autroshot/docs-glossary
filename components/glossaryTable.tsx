@@ -23,11 +23,3 @@ export default function GlossaryTable({ children }: Props) {
 interface Props {
   children: React.ReactNode;
 }
-
-export interface Term {
-  english: string;
-  korean: string;
-  type: string;
-  field: string;
-  description: string;
-}

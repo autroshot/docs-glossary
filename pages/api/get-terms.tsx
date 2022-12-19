@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
-import { Term } from '../../components/glossaryTable';
 
 export default async function handler(
   req: NextApiRequest,
@@ -50,4 +49,11 @@ function getErrorMessage(error: unknown) {
   return String(error);
 }
 
+export interface Term {
+  english: string;
+  korean: string;
+  type: string;
+  field: string;
+  description: string;
+}
 export type GetResponseData = Term[];
