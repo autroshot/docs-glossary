@@ -4,6 +4,8 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  Td,
+  Tr,
 } from '@chakra-ui/react';
 import Head from 'next/head';
 import GlossaryTable, { Term } from '../components/glossaryTable';
@@ -15,7 +17,7 @@ import { GetResponseData } from './api/get-terms';
 export default function Home() {
   const [terms, setTerms] = useState<null | Term[]>(null);
   const [searchWord, setSearchWord] = useState('');
-  const [error, setError] = useState<null | string>(null);
+  const [isError, setIsError] = useState(false);
   const inputElement = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -28,7 +30,7 @@ export default function Home() {
       })
       .catch((err) => {
         console.error(err);
-        setError(err);
+        setIsError(true);
       });
   }, []);
 
@@ -68,8 +70,31 @@ export default function Home() {
             <SearchIcon />
           </InputRightElement>
         </InputGroup>
-        <GlossaryTable terms={filteredTerms} />
+        <GlossaryTable>{getGlossaryTableContent()}</GlossaryTable>
       </Container>
     </>
   );
+
+  function getGlossaryTableContent(): React.ReactNode {
+    if (isError) {
+      return (
+        <Tr>
+          <Td colSpan={100} textAlign={'center'}>
+            서버에서 오류가 발생했습니다.
+          </Td>
+        </Tr>
+      );
+    }
+    return filteredTerms.map((term) => {
+      return (
+        <Tr key={term.english}>
+          <Td>{term.english}</Td>
+          <Td>{term.korean}</Td>
+          <Td>{term.type}</Td>
+          <Td>{term.field}</Td>
+          <Td>{term.description}</Td>
+        </Tr>
+      );
+    });
+  }
 }

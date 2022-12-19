@@ -1,15 +1,7 @@
-import {
-  Table,
-  Thead,
-  Tbody,
-  Tr,
-  Th,
-  Td,
-  TableContainer,
-} from '@chakra-ui/react';
+import { Table, Thead, Tbody, Tr, Th, TableContainer } from '@chakra-ui/react';
 import styles from './glossaryTable.module.css';
 
-export default function GlossaryTable({ terms }: Props) {
+export default function GlossaryTable({ children }: Props) {
   return (
     <TableContainer whiteSpace="normal">
       <Table variant="simple" my={3} className={styles.table} w="75rem">
@@ -22,26 +14,14 @@ export default function GlossaryTable({ terms }: Props) {
             <Th w="35%">설명</Th>
           </Tr>
         </Thead>
-        <Tbody>
-          {terms.map((term) => {
-            return (
-              <Tr key={term.english}>
-                <Td>{term.english}</Td>
-                <Td>{term.korean}</Td>
-                <Td>{term.type}</Td>
-                <Td>{term.field}</Td>
-                <Td>{term.description}</Td>
-              </Tr>
-            );
-          })}
-        </Tbody>
+        <Tbody>{children}</Tbody>
       </Table>
     </TableContainer>
   );
 }
 
 interface Props {
-  terms: Term[];
+  children: React.ReactNode;
 }
 
 export interface Term {
