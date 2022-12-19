@@ -15,6 +15,7 @@ import { GetResponseData } from './api/get-terms';
 export default function Home() {
   const [terms, setTerms] = useState<null | Term[]>(null);
   const [searchWord, setSearchWord] = useState('');
+  const [error, setError] = useState<null | string>(null);
   const inputElement = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -25,7 +26,10 @@ export default function Home() {
           setTerms(res.data);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.error(err);
+        setError(err);
+      });
   }, []);
 
   useEffect(() => {
