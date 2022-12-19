@@ -4,6 +4,7 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  Spinner,
   Td,
   Tr,
 } from '@chakra-ui/react';
@@ -17,6 +18,7 @@ import { GetResponseData } from './api/get-terms';
 export default function Home() {
   const [terms, setTerms] = useState<null | Term[]>(null);
   const [searchWord, setSearchWord] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const inputElement = useRef<HTMLInputElement>(null);
 
@@ -31,6 +33,9 @@ export default function Home() {
       .catch((err) => {
         console.error(err);
         setIsError(true);
+      })
+      .then(() => {
+        setIsLoading(false);
       });
   }, []);
 
@@ -81,6 +86,15 @@ export default function Home() {
         <Tr>
           <Td colSpan={100} textAlign={'center'}>
             서버에서 오류가 발생했습니다.
+          </Td>
+        </Tr>
+      );
+    }
+    if (isLoading) {
+      return (
+        <Tr>
+          <Td colSpan={100} textAlign={'center'}>
+            <Spinner label="로딩 중입니다..." />
           </Td>
         </Tr>
       );
