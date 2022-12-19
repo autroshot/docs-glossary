@@ -99,6 +99,15 @@ export default function Home() {
         </Tr>
       );
     }
+    if (terms?.length === 0) {
+      return (
+        <Tr>
+          <Td colSpan={100} textAlign={'center'}>
+            DB에 데이터가 존재하지 않습니다.
+          </Td>
+        </Tr>
+      );
+    }
     return filteredTerms.map((term) => {
       return (
         <Tr key={term.english}>
