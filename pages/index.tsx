@@ -43,20 +43,6 @@ export default function Home() {
     inputElement.current?.focus();
   }, []);
 
-  let filteredTerms: Term[] = [];
-  if (terms !== null) {
-    if (searchWord.length === 0) {
-      filteredTerms = [...terms];
-    } else {
-      filteredTerms = terms.filter((term) => {
-        return (
-          term.english.toLowerCase().includes(searchWord.toLowerCase()) ||
-          term.korean.includes(searchWord)
-        );
-      });
-    }
-  }
-
   return (
     <>
       <Head>
@@ -108,7 +94,7 @@ export default function Home() {
         </Tr>
       );
     }
-    return filteredTerms.map((term) => {
+    return getFilteredTerms().map((term) => {
       return (
         <Tr key={term.english}>
           <Td>{term.english}</Td>
@@ -117,6 +103,17 @@ export default function Home() {
           <Td>{term.field}</Td>
           <Td>{term.description}</Td>
         </Tr>
+      );
+    });
+  }
+
+  function getFilteredTerms(): Term[] {
+    if (terms === null) return [];
+    if (searchWord.length === 0) return [...terms];
+    return terms.filter((term) => {
+      return (
+        term.english.toLowerCase().includes(searchWord.toLowerCase()) ||
+        term.korean.includes(searchWord)
       );
     });
   }
