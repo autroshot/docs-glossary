@@ -24,3 +24,12 @@
 ### 데이터 가져오기
 
 - [Axios](https://axios-http.com/)
+
+## 참고
+
+- [네이버 영어사전](https://en.dict.naver.com/)
+- [한국어 어문 규범](https://kornorms.korean.go.kr/)
+- [TTA 정보통신용어사전](http://terms.tta.or.kr/)
+- [IT 글쓰기와 번역 노트](https://wikidocs.net/book/4103)
+- [모던 자바스크립트 튜토리얼의 용어집](https://docs.google.com/spreadsheets/d/1fYaEI8vz26N3R2VaxrlNnk9fMQ8zIy4RpvjRp4jZd0Q/edit#gid=843106813)
+- [MDN 번역 지침의 용어 지침](https://github.com/mdn/translated-content/blob/main/docs/ko/translation-guide.md#용어-지침)
