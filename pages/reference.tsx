@@ -17,13 +17,23 @@ export default function Reference() {
         <Heading my={3}>참고</Heading>
         <UnorderedList spacing={3} my={5}>
           <ListItem>
-            <Link href="https://wikidocs.net/book/4103" isExternal>
-              IT 글쓰기와 번역 노트
+            <Link href="https://en.dict.naver.com/" isExternal>
+              네이버 영어사전
             </Link>
           </ListItem>
           <ListItem>
-            <Link href="https://en.dict.naver.com/" isExternal>
-              네이버 영어사전
+            <Link href="https://kornorms.korean.go.kr/" isExternal>
+              한국어 어문 규범
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="http://terms.tta.or.kr/" isExternal>
+              TTA 정보통신용어사전
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="https://wikidocs.net/book/4103" isExternal>
+              IT 글쓰기와 번역 노트
             </Link>
           </ListItem>
           <ListItem>
@@ -35,13 +45,11 @@ export default function Reference() {
             </Link>
           </ListItem>
           <ListItem>
-            <Link href="https://transliterator.herokuapp.com/" isExternal>
-              영어-한글 표기 변환기
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://kornorms.korean.go.kr/" isExternal>
-              한국어 어문 규범
+            <Link
+              href="https://github.com/mdn/translated-content/blob/main/docs/ko/translation-guide.md#%EC%9A%A9%EC%96%B4-%EC%A7%80%EC%B9%A8"
+              isExternal
+            >
+              MDN 번역 지침의 용어 지침
             </Link>
           </ListItem>
         </UnorderedList>
