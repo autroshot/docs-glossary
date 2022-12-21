@@ -143,6 +143,12 @@ export default function Home() {
       );
     });
   }
+
+  function getTermsFromLocalStorage() {
+    const value = localStorage.getItem('terms');
+    if (value === null) return null;
+    return (JSON.parse(value)?.data as undefined | Term[]) ?? null;
+  }
 }
 
 interface TermsWithUpdatedTime {
