@@ -1,4 +1,6 @@
 import {
+  Button,
+  Center,
   Container,
   Heading,
   Input,
@@ -6,6 +8,7 @@ import {
   InputRightElement,
   Spinner,
   Td,
+  Text,
   Tr,
 } from '@chakra-ui/react';
 import Head from 'next/head';
@@ -69,6 +72,10 @@ export default function Home() {
       </Head>
       <Container centerContent maxW="container.xl" my={5}>
         <Heading my={3}>용어집</Heading>
+        <Center>
+          <Text>3시간 전에 갱신됨</Text>
+          <Button ms={3}>갱신</Button>
+        </Center>
         <InputGroup my={3}>
           <Input
             placeholder="검색할 용어의 영어나 한국어를 입력하세요."
