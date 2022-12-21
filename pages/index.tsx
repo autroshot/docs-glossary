@@ -33,7 +33,28 @@ export default function Home() {
       );
       setIsLoading(false);
     } else {
-      getTermsAndStoreInLocalStorage();
+      axios
+        .get<GetResponseData>('/api/get-terms')
+        .then(async (res) => {
+          if (res.data) {
+            setTerms(res.data);
+
+            localStorage.setItem(
+              'terms',
+              JSON.stringify({
+                updatedTime: Date.now(),
+                data: res.data,
+              } as TermsWithUpdatedTime)
+            );
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+          setIsError(true);
+        })
+        .then(() => {
+          setIsLoading(false);
+        });
     }
   }, []);
 
@@ -114,31 +135,6 @@ export default function Home() {
         term.korean.includes(searchWord)
       );
     });
-  }
-
-  function getTermsAndStoreInLocalStorage() {
-    axios
-      .get<GetResponseData>('/api/get-terms')
-      .then(async (res) => {
-        if (res.data) {
-          setTerms(res.data);
-
-          localStorage.setItem(
-            'terms',
-            JSON.stringify({
-              updatedTime: Date.now(),
-              data: res.data,
-            } as TermsWithUpdatedTime)
-          );
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-        setIsError(true);
-      })
-      .then(() => {
-        setIsLoading(false);
-      });
   }
 }
 
