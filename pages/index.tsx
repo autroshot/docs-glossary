@@ -23,20 +23,18 @@ export default function Home() {
   const inputElement = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    axios
-      .get<GetResponseData>('/api/get-terms')
-      .then(async (res) => {
-        if (res.data) {
-          setTerms(res.data);
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-        setIsError(true);
-      })
-      .then(() => {
-        setIsLoading(false);
-      });
+    if (localStorage.getItem('terms') !== null) {
+      setTerms(
+        (
+          JSON.parse(
+            localStorage.getItem('terms') as string
+          ) as TermsWithUpdatedTime
+        ).data
+      );
+      setIsLoading(false);
+    } else {
+      getTermsAndStoreInLocalStorage();
+    }
   }, []);
 
   useEffect(() => {
@@ -117,4 +115,34 @@ export default function Home() {
       );
     });
   }
+
+  function getTermsAndStoreInLocalStorage() {
+    axios
+      .get<GetResponseData>('/api/get-terms')
+      .then(async (res) => {
+        if (res.data) {
+          setTerms(res.data);
+
+          localStorage.setItem(
+            'terms',
+            JSON.stringify({
+              updatedTime: Date.now(),
+              data: res.data,
+            } as TermsWithUpdatedTime)
+          );
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        setIsError(true);
+      })
+      .then(() => {
+        setIsLoading(false);
+      });
+  }
+}
+
+interface TermsWithUpdatedTime {
+  updatedTime: number;
+  data: Term[];
 }
