@@ -42,7 +42,7 @@ export default function Home() {
             localStorage.setItem(
               'terms',
               JSON.stringify({
-                updatedTime: Date.now(),
+                updatedTimestamp: Date.now(),
                 data: res.data,
               } as TermsWithUpdatedTime)
             );
@@ -139,6 +139,6 @@ export default function Home() {
 }
 
 interface TermsWithUpdatedTime {
-  updatedTime: number;
+  updatedTimestamp: number;
   data: Term[];
 }
