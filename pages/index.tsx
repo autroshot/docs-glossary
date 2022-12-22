@@ -16,7 +16,7 @@ import GlossaryTable from '../components/glossaryTable';
 import { SearchIcon } from '@chakra-ui/icons';
 import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
-import { GetResponseData, Term } from './api/get-terms';
+import { GetResponseData, Term } from './api/terms';
 
 export default function Home() {
   const [terms, setTerms] = useState<null | Term[]>(null);
@@ -32,7 +32,7 @@ export default function Home() {
       setIsLoading(false);
     } else {
       axios
-        .get<GetResponseData>('/api/get-terms')
+        .get<GetResponseData>('/api/terms')
         .then(async (res) => {
           if (res.data) {
             setTerms(res.data);
