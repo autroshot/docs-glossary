@@ -17,6 +17,7 @@ import { SearchIcon } from '@chakra-ui/icons';
 import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import { GetResponseData, Term } from './api/terms';
+import MyStorage from '../classes/MyStorage';
 
 export default function Home() {
   const [terms, setTerms] = useState<null | Term[]>(null);
@@ -26,7 +27,8 @@ export default function Home() {
   const inputElement = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    const terms = getTermsFromLocalStorage();
+    const myLocalStorage = new MyStorage(localStorage);
+    const terms = myLocalStorage.getTerms();
     if (terms !== null) {
       setTerms(terms);
       setIsLoading(false);
@@ -37,7 +39,7 @@ export default function Home() {
           if (res.data) {
             setTerms(res.data);
 
-            localStorage.setItem('terms', JSON.stringify(res.data));
+            myLocalStorage.setTerms(res.data);
             localStorage.setItem('updatedTimestamp', String(Date.now()));
           }
         })
@@ -50,31 +52,10 @@ export default function Home() {
         });
     }
 
-    function getTermsFromLocalStorage() {
-      const value = localStorage.getItem('terms');
-      if (value === null) return null;
-
-      const parsedValue = JSON.parse(value);
-      if (!isTermArray(parsedValue)) return null;
-      return parsedValue;
-    }
-
     function getUpdatedTimestampFromLocalStorage() {
       const value = localStorage.getItem('updatedTimestamp');
       if (value === null) return null;
       return Number(value);
-    }
-
-    function isTermArray(object: any): object is Term[] {
-      return (
-        object &&
-        Array.isArray(object) &&
-        typeof object[0].english === 'string' &&
-        typeof object[0].korean === 'string' &&
-        typeof object[0].type === 'string' &&
-        typeof object[0].field === 'string' &&
-        typeof object[0].description === 'string'
-      );
     }
   }, []);
 
