@@ -26,8 +26,9 @@ export default function Home() {
   const inputElement = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (localStorage.getItem('terms') !== null) {
-      setTerms(JSON.parse(localStorage.getItem('terms') as string));
+    const terms = getTermsFromLocalStorage();
+    if (terms !== null) {
+      setTerms(terms);
       setIsLoading(false);
     } else {
       axios
@@ -47,6 +48,27 @@ export default function Home() {
         .then(() => {
           setIsLoading(false);
         });
+    }
+
+    function getTermsFromLocalStorage() {
+      const value = localStorage.getItem('terms');
+      if (value === null) return null;
+
+      const parsedValue = JSON.parse(value);
+      if (!isTermArray(parsedValue)) return null;
+      return parsedValue;
+    }
+
+    function isTermArray(object: any): object is Term[] {
+      return (
+        object &&
+        Array.isArray(object) &&
+        typeof object[0].english === 'string' &&
+        typeof object[0].korean === 'string' &&
+        typeof object[0].type === 'string' &&
+        typeof object[0].field === 'string' &&
+        typeof object[0].description === 'string'
+      );
     }
   }, []);
 
@@ -131,23 +153,5 @@ export default function Home() {
         term.korean.includes(searchWord)
       );
     });
-  }
-
-  function getTermsFromLocalStorage() {
-    const value = localStorage.getItem('terms');
-    if (value === null || !isTermArray(JSON.parse(value))) return null;
-    return value;
-  }
-
-  function isTermArray(object: any): object is Term[] {
-    return (
-      object &&
-      Array.isArray(object) &&
-      typeof object[0].english === 'string' &&
-      typeof object[0].korean === 'string' &&
-      typeof object[0].type === 'string' &&
-      typeof object[0].field === 'string' &&
-      typeof object[0].description === 'string'
-    );
   }
 }
