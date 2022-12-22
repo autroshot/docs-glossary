@@ -135,7 +135,19 @@ export default function Home() {
 
   function getTermsFromLocalStorage() {
     const value = localStorage.getItem('terms');
-    if (value === null) return null;
-    return (JSON.parse(value)?.data as undefined | Term[]) ?? null;
+    if (value === null || !isTermArray(JSON.parse(value))) return null;
+    return value;
+  }
+
+  function isTermArray(object: any): object is Term[] {
+    return (
+      object &&
+      Array.isArray(object) &&
+      typeof object[0].english === 'string' &&
+      typeof object[0].korean === 'string' &&
+      typeof object[0].type === 'string' &&
+      typeof object[0].field === 'string' &&
+      typeof object[0].description === 'string'
+    );
   }
 }
