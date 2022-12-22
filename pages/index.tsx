@@ -59,6 +59,12 @@ export default function Home() {
       return parsedValue;
     }
 
+    function getUpdatedTimestampFromLocalStorage() {
+      const value = localStorage.getItem('updatedTimestamp');
+      if (value === null) return null;
+      return Number(value);
+    }
+
     function isTermArray(object: any): object is Term[] {
       return (
         object &&
