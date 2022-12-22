@@ -42,11 +42,11 @@ export default async function handler(
     console.error(getErrorMessage(err));
     res.status(500).json(getErrorMessage(err));
   }
-}
 
-function getErrorMessage(error: unknown) {
-  if (error instanceof Error) return error.message;
-  return String(error);
+  function getErrorMessage(error: unknown) {
+    if (error instanceof Error) return error.message;
+    return String(error);
+  }
 }
 
 export interface Term {
