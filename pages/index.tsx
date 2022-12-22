@@ -27,13 +27,7 @@ export default function Home() {
 
   useEffect(() => {
     if (localStorage.getItem('terms') !== null) {
-      setTerms(
-        (
-          JSON.parse(
-            localStorage.getItem('terms') as string
-          ) as TermsWithUpdatedTime
-        ).data
-      );
+      setTerms(JSON.parse(localStorage.getItem('terms') as string));
       setIsLoading(false);
     } else {
       axios
@@ -42,13 +36,8 @@ export default function Home() {
           if (res.data) {
             setTerms(res.data);
 
-            localStorage.setItem(
-              'terms',
-              JSON.stringify({
-                updatedTimestamp: Date.now(),
-                data: res.data,
-              } as TermsWithUpdatedTime)
-            );
+            localStorage.setItem('terms', JSON.stringify(res.data));
+            localStorage.setItem('updatedTimestamp', String(Date.now()));
           }
         })
         .catch((err) => {
@@ -149,9 +138,4 @@ export default function Home() {
     if (value === null) return null;
     return (JSON.parse(value)?.data as undefined | Term[]) ?? null;
   }
-}
-
-interface TermsWithUpdatedTime {
-  updatedTimestamp: number;
-  data: Term[];
 }
