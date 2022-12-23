@@ -75,7 +75,7 @@ export default function Home() {
           <Text>{`${
             updatedTimestamp === null
               ? 0
-              : Number(updatedTimestamp) - Date.now()
+              : Date.now() - Number(updatedTimestamp)
           } 전에 갱신됨`}</Text>
           <Button ms={3}>갱신</Button>
         </Center>
