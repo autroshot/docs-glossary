@@ -21,6 +21,7 @@ import MyStorage from '../classes/MyStorage';
 
 export default function Home() {
   const [terms, setTerms] = useState<null | Term[]>(null);
+  const [updatedTimestamp, setUpdatedTimestamp] = useState<null | Number>(null);
   const [searchWord, setSearchWord] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
