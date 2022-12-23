@@ -19,6 +19,15 @@ export default class MyStorage {
     this.#set('terms', JSON.stringify(terms));
   }
 
+  getUpdatedTimestamp() {
+    const value = this.#get('updatedTimestamp');
+    if (value === null) return null;
+    return Number(value);
+  }
+  setUpdatedTimestamp(timestamp: number) {
+    this.#set('updatedTimestamp', String(timestamp));
+  }
+
   #get(key: myStorageKeys): null | string {
     return this.#storage.getItem(key);
   }
