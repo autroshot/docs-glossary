@@ -3,12 +3,16 @@ import { Button, Center, Text } from '@chakra-ui/react';
 export default function Update({ updatedTimestamp }: Props) {
   return (
     <Center>
-      {updatedTimestamp === null ? null : (
+      {updatedTimestamp === null ? (
+        '불러오는 중...'
+      ) : (
         <Text>{`${millisecondsToBriefText(
           Date.now() - updatedTimestamp
         )} 전에 갱신됨`}</Text>
       )}
-      <Button ms={3}>갱신</Button>
+      <Button ms={3} disabled={updatedTimestamp === null}>
+        갱신
+      </Button>
     </Center>
   );
 }
@@ -35,7 +39,7 @@ export function millisecondsToBriefText(milliseconds: number): string {
     return `${Math.floor(seconds / SECONDS_IN_AN_HOUR)}시간`;
   if (seconds >= SECONDS_IN_A_MINUTE)
     return `${Math.floor(seconds / SECONDS_IN_A_MINUTE)}분`;
-  return '조금';
+  return '방금';
 }
 
 interface Props {
