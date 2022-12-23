@@ -1,6 +1,4 @@
 import {
-  Button,
-  Center,
   Container,
   Heading,
   Input,
@@ -8,7 +6,6 @@ import {
   InputRightElement,
   Spinner,
   Td,
-  Text,
   Tr,
 } from '@chakra-ui/react';
 import Head from 'next/head';
@@ -18,6 +15,7 @@ import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import { GetResponseData, Term } from './api/terms';
 import MyStorage from '../classes/MyStorage';
+import Update from '../components/update';
 
 export default function Home() {
   const [terms, setTerms] = useState<null | Term[]>(null);
@@ -71,14 +69,7 @@ export default function Home() {
       </Head>
       <Container centerContent maxW="container.xl" my={5}>
         <Heading my={3}>용어집</Heading>
-        <Center>
-          {updatedTimestamp === null ? null : (
-            <Text>{`${new Date(
-              Date.now() - updatedTimestamp
-            ).getSeconds()} 전에 갱신됨`}</Text>
-          )}
-          <Button ms={3}>갱신</Button>
-        </Center>
+        <Update updatedTimestamp={updatedTimestamp} />
         <InputGroup my={3}>
           <Input
             placeholder="검색할 용어의 영어나 한국어를 입력하세요."
