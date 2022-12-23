@@ -39,7 +39,7 @@ export function millisecondsToBriefText(milliseconds: number): string {
     return `${Math.floor(seconds / SECONDS_IN_AN_HOUR)}시간`;
   if (seconds >= SECONDS_IN_A_MINUTE)
     return `${Math.floor(seconds / SECONDS_IN_A_MINUTE)}분`;
-  return '방금';
+  return '조금';
 }
 
 interface Props {
