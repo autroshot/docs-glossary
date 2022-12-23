@@ -30,18 +30,24 @@ export default function Home() {
   useEffect(() => {
     const myLocalStorage = new MyStorage(localStorage);
     const termsFromStorage = myLocalStorage.getTerms();
-    if (termsFromStorage !== null) {
+    const updatedTimestampFromStorage = myLocalStorage.getUpdatedTimestamp();
+
+    if (termsFromStorage !== null && updatedTimestampFromStorage !== null) {
       setTerms(termsFromStorage);
+      setUpdatedTimestamp(updatedTimestampFromStorage);
       setIsLoading(false);
     } else {
       axios
         .get<GetResponseData>('/api/terms')
         .then(async (res) => {
           if (res.data) {
+            const currentTimestamp = Date.now();
+
             setTerms(res.data);
+            setUpdatedTimestamp(currentTimestamp);
 
             myLocalStorage.setTerms(res.data);
-            localStorage.setItem('updatedTimestamp', String(Date.now()));
+            myLocalStorage.setUpdatedTimestamp(currentTimestamp);
           }
         })
         .catch((err) => {
