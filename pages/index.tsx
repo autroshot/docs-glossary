@@ -51,12 +51,6 @@ export default function Home() {
           setIsLoading(false);
         });
     }
-
-    function getUpdatedTimestampFromLocalStorage() {
-      const value = localStorage.getItem('updatedTimestamp');
-      if (value === null) return null;
-      return Number(value);
-    }
   }, []);
 
   useEffect(() => {
