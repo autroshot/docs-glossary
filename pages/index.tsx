@@ -72,11 +72,11 @@ export default function Home() {
       <Container centerContent maxW="container.xl" my={5}>
         <Heading my={3}>용어집</Heading>
         <Center>
-          <Text>{`${
-            updatedTimestamp === null
-              ? 0
-              : Date.now() - Number(updatedTimestamp)
-          } 전에 갱신됨`}</Text>
+          {updatedTimestamp === null ? null : (
+            <Text>{`${new Date(
+              Date.now() - updatedTimestamp
+            ).getSeconds()} 전에 갱신됨`}</Text>
+          )}
           <Button ms={3}>갱신</Button>
         </Center>
         <InputGroup my={3}>
