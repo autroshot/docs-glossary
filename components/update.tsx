@@ -1,6 +1,7 @@
 import { Button, Center, Text } from '@chakra-ui/react';
+import MyStorage from '../classes/MyStorage';
 
-export default function Update({ updatedTimestamp }: Props) {
+export default function Update({ updatedTimestamp, onClick }: Props) {
   return (
     <Center>
       {updatedTimestamp === null ? (
@@ -10,7 +11,7 @@ export default function Update({ updatedTimestamp }: Props) {
           Date.now() - updatedTimestamp
         )} 전에 갱신됨`}</Text>
       )}
-      <Button ms={3} disabled={updatedTimestamp === null}>
+      <Button ms={3} disabled={updatedTimestamp === null} onClick={onClick}>
         갱신
       </Button>
     </Center>
@@ -44,4 +45,5 @@ export function millisecondsToBriefText(milliseconds: number): string {
 
 interface Props {
   updatedTimestamp: null | number;
+  onClick: () => void;
 }

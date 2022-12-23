@@ -50,7 +50,10 @@ export default function Home() {
       </Head>
       <Container centerContent maxW="container.xl" my={5}>
         <Heading my={3}>용어집</Heading>
-        <Update updatedTimestamp={updatedTimestamp} />
+        <Update
+          updatedTimestamp={updatedTimestamp}
+          onClick={handleUpdateClick}
+        />
         <InputGroup my={3}>
           <Input
             placeholder="검색할 용어의 영어나 한국어를 입력하세요."
@@ -106,6 +109,10 @@ export default function Home() {
         </Tr>
       );
     });
+  }
+
+  function handleUpdateClick() {
+    getTermsFromServer(new MyStorage(localStorage));
   }
 
   function getFilteredTerms(): Term[] {
