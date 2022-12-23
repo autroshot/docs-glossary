@@ -4,9 +4,9 @@ export default function Update({ updatedTimestamp }: Props) {
   return (
     <Center>
       {updatedTimestamp === null ? null : (
-        <Text>{`${new Date(
+        <Text>{`${millisecondsToBriefText(
           Date.now() - updatedTimestamp
-        ).getSeconds()} 전에 갱신됨`}</Text>
+        )} 전에 갱신됨`}</Text>
       )}
       <Button ms={3}>갱신</Button>
     </Center>
