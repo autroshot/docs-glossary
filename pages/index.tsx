@@ -29,9 +29,9 @@ export default function Home() {
 
   useEffect(() => {
     const myLocalStorage = new MyStorage(localStorage);
-    const terms = myLocalStorage.getTerms();
-    if (terms !== null) {
-      setTerms(terms);
+    const termsFromStorage = myLocalStorage.getTerms();
+    if (termsFromStorage !== null) {
+      setTerms(termsFromStorage);
       setIsLoading(false);
     } else {
       axios
