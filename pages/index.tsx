@@ -35,26 +35,7 @@ export default function Home() {
       setUpdatedTimestamp(updatedTimestampFromStorage);
       setIsLoading(false);
     } else {
-      axios
-        .get<GetResponseData>('/api/terms')
-        .then(async (res) => {
-          if (res.data) {
-            const currentTimestamp = Date.now();
-
-            setTerms(res.data);
-            setUpdatedTimestamp(currentTimestamp);
-
-            myLocalStorage.setTerms(res.data);
-            myLocalStorage.setUpdatedTimestamp(currentTimestamp);
-          }
-        })
-        .catch((err) => {
-          console.error(err);
-          setIsError(true);
-        })
-        .then(() => {
-          setIsLoading(false);
-        });
+      getTermsFromServer(myLocalStorage);
     }
   }, []);
 
@@ -137,4 +118,31 @@ export default function Home() {
       );
     });
   }
+
+  function getTermsFromServer(myLocalStorage: MyStorage) {
+    axios
+      .get<GetResponseData>('/api/terms')
+      .then(async (res) => {
+        if (res.data) {
+          const currentTimestamp = Date.now();
+
+          setTerms(res.data);
+          setUpdatedTimestamp(currentTimestamp);
+
+          myLocalStorage.setTerms(res.data);
+          myLocalStorage.setUpdatedTimestamp(currentTimestamp);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        setIsError(true);
+      })
+      .then(() => {
+        setIsLoading(false);
+      });
+  }
+}
+
+interface Params {
+  myLocalStorage: MyStorage;
 }
