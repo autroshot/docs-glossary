@@ -26,6 +26,8 @@ export default function Home() {
   const inputElement = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
+    setIsLoading(true);
+
     const myLocalStorage = new MyStorage(localStorage);
     const termsFromStorage = myLocalStorage.getTerms();
     const updatedTimestampFromStorage = myLocalStorage.getUpdatedTimestamp();
@@ -112,6 +114,9 @@ export default function Home() {
   }
 
   function handleUpdateClick() {
+    setIsLoading(true);
+    setTerms(null);
+    setUpdatedTimestamp(null);
     getTermsFromServer(new MyStorage(localStorage));
   }
 
