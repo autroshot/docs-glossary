@@ -140,7 +140,7 @@ export default function Home() {
   function getTermsFromServer(myLocalStorage: MyStorage) {
     axios
       .get<GetResponseData>('/api/terms')
-      .then(async (res) => {
+      .then((res) => {
         if (res.data) {
           const currentTimestamp = Date.now();
 
