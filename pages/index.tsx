@@ -160,7 +160,3 @@ export default function Home() {
       });
   }
 }
-
-interface Params {
-  myLocalStorage: MyStorage;
-}
