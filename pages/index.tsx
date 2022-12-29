@@ -113,10 +113,8 @@ export default function Home() {
     });
 
     function getFilteredTerms(): Term[] {
-      const isSearchWordExist = searchWord.length !== 0;
-
       if (terms === null) return [];
-      if (!isSearchWordExist) return [...terms];
+      if (searchWord.length === 0) return [...terms];
       return terms.filter((term) => {
         return (
           term.english.toLowerCase().includes(searchWord.toLowerCase()) ||
