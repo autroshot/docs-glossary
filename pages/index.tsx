@@ -26,9 +26,9 @@ export default function Home() {
   const inputElement = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
+    const myLocalStorage = new MyStorage(localStorage);
     setIsLoading(true);
 
-    const myLocalStorage = new MyStorage(localStorage);
     const termsFromStorage = myLocalStorage.getTerms();
     const updatedTimestampFromStorage = myLocalStorage.getUpdatedTimestamp();
 
@@ -111,6 +111,17 @@ export default function Home() {
         </Tr>
       );
     });
+
+    function getFilteredTerms(): Term[] {
+      if (terms === null) return [];
+      if (searchWord.length === 0) return [...terms];
+      return terms.filter((term) => {
+        return (
+          term.english.toLowerCase().includes(searchWord.toLowerCase()) ||
+          term.korean.includes(searchWord)
+        );
+      });
+    }
   }
 
   function handleUpdateClick() {
@@ -118,17 +129,6 @@ export default function Home() {
     setTerms(null);
     setUpdatedTimestamp(null);
     getTermsFromServer(new MyStorage(localStorage));
-  }
-
-  function getFilteredTerms(): Term[] {
-    if (terms === null) return [];
-    if (searchWord.length === 0) return [...terms];
-    return terms.filter((term) => {
-      return (
-        term.english.toLowerCase().includes(searchWord.toLowerCase()) ||
-        term.korean.includes(searchWord)
-      );
-    });
   }
 
   function getTermsFromServer(myLocalStorage: MyStorage) {
