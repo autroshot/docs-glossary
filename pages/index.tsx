@@ -20,7 +20,7 @@ import Update from '../components/update';
 export default function Home() {
   const [terms, setTerms] = useState<null | Term[]>(null);
   const [updatedTimestamp, setUpdatedTimestamp] = useState<null | number>(null);
-  const [searchWord, setSearchWord] = useState('');
+  const [searchWord, setSearchWord] = useState<null | string>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const inputElement = useRef<HTMLInputElement>(null);
@@ -60,8 +60,14 @@ export default function Home() {
           <Input
             placeholder="검색할 용어의 영어나 한국어를 입력하세요."
             ref={inputElement}
-            value={searchWord}
-            onChange={(event) => setSearchWord(event.currentTarget.value)}
+            value={searchWord === null ? '' : searchWord}
+            onChange={(event) =>
+              setSearchWord(
+                event.currentTarget.value === ''
+                  ? null
+                  : event.currentTarget.value
+              )
+            }
           />
           <InputRightElement>
             <SearchIcon />
@@ -114,7 +120,7 @@ export default function Home() {
 
     function getFilteredTerms(): Term[] {
       if (terms === null) return [];
-      if (searchWord.length === 0) return [...terms];
+      if (searchWord === null) return [...terms];
       return terms.filter((term) => {
         return (
           term.english.toLowerCase().includes(searchWord.toLowerCase()) ||
