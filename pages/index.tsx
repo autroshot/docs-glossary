@@ -145,6 +145,7 @@ export default function Home() {
       .then((res) => {
         const currentTimestamp = Date.now();
 
+        setIsError(false);
         setTerms(res.data);
         setUpdatedTimestamp(currentTimestamp);
 
