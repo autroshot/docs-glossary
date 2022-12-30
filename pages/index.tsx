@@ -141,15 +141,13 @@ export default function Home() {
     axios
       .get<GetResponseData>('/api/terms')
       .then((res) => {
-        if (res.data) {
-          const currentTimestamp = Date.now();
+        const currentTimestamp = Date.now();
 
-          setTerms(res.data);
-          setUpdatedTimestamp(currentTimestamp);
+        setTerms(res.data);
+        setUpdatedTimestamp(currentTimestamp);
 
-          myLocalStorage.setTerms(res.data);
-          myLocalStorage.setUpdatedTimestamp(currentTimestamp);
-        }
+        myLocalStorage.setTerms(res.data);
+        myLocalStorage.setUpdatedTimestamp(currentTimestamp);
       })
       .catch((err) => {
         console.error(err);
