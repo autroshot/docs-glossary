@@ -75,12 +75,12 @@ export default function Home() {
             <SearchIcon />
           </InputRightElement>
         </InputGroup>
-        <GlossaryTable>{getGlossaryTableContent()}</GlossaryTable>
+        <GlossaryTable>{createGlossaryTableContent()}</GlossaryTable>
       </Container>
     </>
   );
 
-  function getGlossaryTableContent(): React.ReactNode {
+  function createGlossaryTableContent(): React.ReactNode {
     if (isError) {
       return (
         <Tr>
