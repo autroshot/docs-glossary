@@ -20,14 +20,14 @@ export default function Update({
     if (isLoading) return <Spinner label="로딩 중..." />;
     if (updatedTimestamp === null) return '오류';
     return (
-      <>{`${millisecondsToBriefTime(
+      <>{`${millisecondsToBriefReadableTime(
         Date.now() - updatedTimestamp
       )} 전에 갱신됨`}</>
     );
   }
 }
 
-export function millisecondsToBriefTime(milliseconds: number): string {
+export function millisecondsToBriefReadableTime(milliseconds: number): string {
   const SECONDS_IN_A_YEAR = 31556926; // 대략 365.24 * 24 * 60 * 60
   const SECONDS_IN_A_MONTH = 2629743; // 대략 30.44 * 24 * 60 * 60
   const SECONDS_IN_A_WEEK = 604800; // 7 * 24 * 60 * 60
