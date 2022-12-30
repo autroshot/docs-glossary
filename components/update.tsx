@@ -9,7 +9,7 @@ export default function Update({
   return (
     <Center>
       {getDescription()}
-      <Button ms={3} disabled={updatedTimestamp === null} onClick={onClick}>
+      <Button ms={3} disabled={isLoading} onClick={onClick}>
         갱신
       </Button>
     </Center>
