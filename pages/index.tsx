@@ -94,7 +94,7 @@ export default function Home() {
       return (
         <Tr>
           <Td colSpan={100} textAlign={'center'}>
-            <Spinner label="로딩 중입니다..." />
+            <Spinner label="로딩 중..." />
           </Td>
         </Tr>
       );
