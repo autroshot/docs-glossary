@@ -149,7 +149,7 @@ export default function Home() {
         myLocalStorage.setTerms(res.data);
         myLocalStorage.setUpdatedTimestamp(currentTimestamp);
       })
-      .catch((err) => {
+      .catch(() => {
         setIsError(true);
       })
       .then(() => {
