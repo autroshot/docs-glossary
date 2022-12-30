@@ -37,7 +37,7 @@ export default function Home() {
       setUpdatedTimestamp(updatedTimestampFromStorage);
       setIsLoading(false);
     } else {
-      getTermsFromServer(myLocalStorage);
+      fetchTerms(myLocalStorage);
     }
   }, []);
 
@@ -136,10 +136,10 @@ export default function Home() {
     setIsLoading(true);
     setTerms(null);
     setUpdatedTimestamp(null);
-    getTermsFromServer(new MyStorage(localStorage));
+    fetchTerms(new MyStorage(localStorage));
   }
 
-  function getTermsFromServer(myLocalStorage: MyStorage) {
+  function fetchTerms(myLocalStorage: MyStorage) {
     axios
       .get<GetResponseData>('/api/terms')
       .then((res) => {
