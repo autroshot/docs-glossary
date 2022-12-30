@@ -1,20 +1,30 @@
-import { Button, Center, Text } from '@chakra-ui/react';
+import { Button, Center, Spinner } from '@chakra-ui/react';
 
-export default function Update({ updatedTimestamp, onClick }: Props) {
+export default function Update({
+  isLoading,
+  isError,
+  updatedTimestamp,
+  onClick,
+}: Props) {
   return (
     <Center>
-      {updatedTimestamp === null ? (
-        '불러오는 중...'
-      ) : (
-        <Text>{`${millisecondsToBriefText(
-          Date.now() - updatedTimestamp
-        )} 전에 갱신됨`}</Text>
-      )}
+      {getDescription()}
       <Button ms={3} disabled={updatedTimestamp === null} onClick={onClick}>
         갱신
       </Button>
     </Center>
   );
+
+  function getDescription(): React.ReactNode {
+    if (isError) return '오류';
+    if (isLoading) return <Spinner label="로딩 중..." />;
+    if (updatedTimestamp === null) return '오류';
+    return (
+      <>{`${millisecondsToBriefText(
+        Date.now() - updatedTimestamp
+      )} 전에 갱신됨`}</>
+    );
+  }
 }
 
 export function millisecondsToBriefText(milliseconds: number): string {
@@ -44,5 +54,7 @@ export function millisecondsToBriefText(milliseconds: number): string {
 
 interface Props {
   updatedTimestamp: null | number;
+  isLoading: boolean;
+  isError: boolean;
   onClick: () => void;
 }

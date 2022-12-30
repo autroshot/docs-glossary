@@ -53,6 +53,8 @@ export default function Home() {
       <Container centerContent maxW="container.xl" my={5}>
         <Heading my={3}>용어집</Heading>
         <Update
+          isLoading={isLoading}
+          isError={isError}
           updatedTimestamp={updatedTimestamp}
           onClick={handleUpdateClick}
         />
