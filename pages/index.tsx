@@ -150,7 +150,6 @@ export default function Home() {
         myLocalStorage.setUpdatedTimestamp(currentTimestamp);
       })
       .catch((err) => {
-        console.error(err);
         setIsError(true);
       })
       .then(() => {
