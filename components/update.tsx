@@ -1,5 +1,4 @@
 import { Button, Center, Text } from '@chakra-ui/react';
-import MyStorage from '../classes/MyStorage';
 
 export default function Update({ updatedTimestamp, onClick }: Props) {
   return (
