@@ -1,4 +1,6 @@
+import { SearchIcon } from '@chakra-ui/icons';
 import {
+  Button,
   Container,
   Heading,
   Input,
@@ -8,14 +10,13 @@ import {
   Td,
   Tr,
 } from '@chakra-ui/react';
-import Head from 'next/head';
-import GlossaryTable from '../components/glossaryTable';
-import { SearchIcon } from '@chakra-ui/icons';
-import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
-import { GetResponseData, Term } from './api/terms';
+import Head from 'next/head';
+import { useEffect, useRef, useState } from 'react';
 import MyStorage from '../classes/MyStorage';
+import GlossaryTable from '../components/glossaryTable';
 import Update from '../components/update';
+import { GetResponseData, Term } from './api/terms';
 
 export default function Home() {
   const [terms, setTerms] = useState<null | Term[]>(null);
@@ -50,7 +51,7 @@ export default function Home() {
       <Head>
         <title>용어집</title>
       </Head>
-      <Container centerContent maxW="container.xl" my={5}>
+      <Container centerContent maxW="container.md" my={5}>
         <Heading my={3}>용어집</Heading>
         <Update
           isLoading={isLoading}
@@ -111,11 +112,15 @@ export default function Home() {
     return getFilteredTerms().map((term) => {
       return (
         <Tr key={term.english}>
-          <Td>{term.english}</Td>
-          <Td>{term.korean}</Td>
-          <Td>{term.type}</Td>
-          <Td>{term.field}</Td>
-          <Td>{term.description}</Td>
+          <Td overflow="hidden" textOverflow="ellipsis">
+            {term.english}
+          </Td>
+          <Td overflow="hidden" textOverflow="ellipsis">
+            {term.korean}
+          </Td>
+          <Td padding="0" textAlign="center">
+            <Button size="sm">보기</Button>
+          </Td>
         </Tr>
       );
     });

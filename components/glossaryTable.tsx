@@ -1,17 +1,17 @@
-import { Table, Thead, Tbody, Tr, Th, TableContainer } from '@chakra-ui/react';
+import { Table, TableContainer, Tbody, Th, Thead, Tr } from '@chakra-ui/react';
 import styles from './glossaryTable.module.css';
 
 export default function GlossaryTable({ children }: Props) {
   return (
-    <TableContainer whiteSpace="normal">
-      <Table variant="simple" my={3} className={styles.table} w="75rem">
+    <TableContainer>
+      <Table variant="simple" my={3} className={styles.table} w="37.5rem">
         <Thead>
           <Tr>
-            <Th w="20%">영어</Th>
-            <Th w="24%">한국어</Th>
-            <Th w="8%">종류</Th>
-            <Th w="13%">분야</Th>
-            <Th w="35%">설명</Th>
+            <Th w="40%">영어</Th>
+            <Th w="45%">한국어</Th>
+            <Th w="15%" textAlign="center">
+              상세
+            </Th>
           </Tr>
         </Thead>
         <Tbody>{children}</Tbody>
