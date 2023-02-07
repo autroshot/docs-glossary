@@ -28,7 +28,7 @@ export default function Home() {
   const [isError, setIsError] = useState(false);
   const [selectedTerm, setSelectedTerm] = useState<null | TermIndex>(null);
 
-  const inputElement = useRef<HTMLInputElement>(null);
+  const searchWordInput = useRef<HTMLInputElement>(null);
   const detailOpenButtons = useRef<
     Map<TermIndex, RefObject<HTMLButtonElement>>
   >(new Map());
@@ -56,7 +56,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    inputElement.current?.focus();
+    searchWordInput.current?.focus();
   }, []);
 
   return (
@@ -75,7 +75,7 @@ export default function Home() {
         <InputGroup my={3}>
           <Input
             placeholder="검색할 용어의 영어나 한국어를 입력하세요."
-            ref={inputElement}
+            ref={searchWordInput}
             value={searchWord === null ? '' : searchWord}
             onChange={(event) =>
               setSearchWord(
