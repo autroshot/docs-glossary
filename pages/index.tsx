@@ -28,10 +28,9 @@ export default function Home() {
   const [isError, setIsError] = useState(false);
   const [selectedTerm, setSelectedTerm] = useState<null | TermIndex>(null);
   const inputElement = useRef<HTMLInputElement>(null);
-  const detailOpenButtonRefs = new Map<
-    TermIndex,
-    RefObject<HTMLButtonElement>
-  >();
+  const detailOpenButtons = useRef<
+    Map<TermIndex, RefObject<HTMLButtonElement>>
+  >(new Map());
   const {
     isOpen: isDetailOpen,
     onOpen: onDetailOpen,
@@ -91,7 +90,7 @@ export default function Home() {
         <GlossaryTable>{createGlossaryTableContent()}</GlossaryTable>
       </Container>
       <DetailDrawer
-        finalFocusRef={detailOpenButtonRefs.get(String(selectedTerm))}
+        finalFocusRef={detailOpenButtons.current.get(String(selectedTerm))}
         isOpen={isDetailOpen}
         onClose={onDetailClose}
       />
@@ -140,7 +139,7 @@ export default function Home() {
               size="sm"
               ref={(ref) => {
                 if (ref !== null)
-                  detailOpenButtonRefs.set(term.english, { current: ref });
+                  detailOpenButtons.current.set(term.english, { current: ref });
               }}
               onClick={() => {
                 setSelectedTerm(term.english);
