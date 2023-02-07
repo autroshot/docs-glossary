@@ -27,10 +27,12 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [selectedTerm, setSelectedTerm] = useState<null | TermIndex>(null);
+
   const inputElement = useRef<HTMLInputElement>(null);
   const detailOpenButtons = useRef<
     Map<TermIndex, RefObject<HTMLButtonElement>>
   >(new Map());
+
   const {
     isOpen: isDetailOpen,
     onOpen: onDetailOpen,
