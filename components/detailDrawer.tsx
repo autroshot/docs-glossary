@@ -8,10 +8,20 @@ import {
   DrawerHeader,
   DrawerOverlay,
 } from '@chakra-ui/react';
+import { RefObject } from 'react';
 
-export default function DetailDrawer({ isOpen, onClose }: Props) {
+export default function DetailDrawer({
+  finalFocusRef,
+  isOpen,
+  onClose,
+}: Props) {
   return (
-    <Drawer placement="bottom" isOpen={isOpen} onClose={onClose}>
+    <Drawer
+      placement="bottom"
+      isOpen={isOpen}
+      onClose={onClose}
+      finalFocusRef={finalFocusRef}
+    >
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton />
@@ -28,6 +38,7 @@ export default function DetailDrawer({ isOpen, onClose }: Props) {
 }
 
 interface Props {
+  finalFocusRef?: RefObject<HTMLElement>;
   isOpen: boolean;
   onClose: () => void;
 }

@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react';
 import axios from 'axios';
 import Head from 'next/head';
-import { useEffect, useRef, useState } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
 import MyStorage from '../classes/MyStorage';
 import DetailDrawer from '../components/detailDrawer';
 import GlossaryTable from '../components/glossaryTable';
@@ -28,6 +28,10 @@ export default function Home() {
   const [isError, setIsError] = useState(false);
   const [selectedTerm, setSelectedTerm] = useState<null | TermIndex>(null);
   const inputElement = useRef<HTMLInputElement>(null);
+  const detailOpenButtonRefs = new Map<
+    TermIndex,
+    RefObject<HTMLButtonElement>
+  >();
   const {
     isOpen: isDetailOpen,
     onOpen: onDetailOpen,
@@ -86,7 +90,11 @@ export default function Home() {
         </InputGroup>
         <GlossaryTable>{createGlossaryTableContent()}</GlossaryTable>
       </Container>
-      <DetailDrawer isOpen={isDetailOpen} onClose={onDetailClose} />
+      <DetailDrawer
+        finalFocusRef={detailOpenButtonRefs.get(String(selectedTerm))}
+        isOpen={isDetailOpen}
+        onClose={onDetailClose}
+      />
     </>
   );
 
@@ -130,6 +138,10 @@ export default function Home() {
           <Td padding="0" textAlign="center">
             <Button
               size="sm"
+              ref={(ref) => {
+                if (ref !== null)
+                  detailOpenButtonRefs.set(term.english, { current: ref });
+              }}
               onClick={() => {
                 setSelectedTerm(term.english);
                 onDetailOpen();
