@@ -9,11 +9,13 @@ import {
   Spinner,
   Td,
   Tr,
+  useDisclosure,
 } from '@chakra-ui/react';
 import axios from 'axios';
 import Head from 'next/head';
 import { useEffect, useRef, useState } from 'react';
 import MyStorage from '../classes/MyStorage';
+import DetailDrawer from '../components/detailDrawer';
 import GlossaryTable from '../components/glossaryTable';
 import Update from '../components/update';
 import { GetResponseData, Term } from './api/terms';
@@ -24,7 +26,13 @@ export default function Home() {
   const [searchWord, setSearchWord] = useState<null | string>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+  const [selectedTerm, setSelectedTerm] = useState<null | TermIndex>(null);
   const inputElement = useRef<HTMLInputElement>(null);
+  const {
+    isOpen: isDetailOpen,
+    onOpen: onDetailOpen,
+    onClose: onDetailClose,
+  } = useDisclosure();
 
   useEffect(() => {
     const myLocalStorage = new MyStorage(localStorage);
@@ -78,6 +86,7 @@ export default function Home() {
         </InputGroup>
         <GlossaryTable>{createGlossaryTableContent()}</GlossaryTable>
       </Container>
+      <DetailDrawer isOpen={isDetailOpen} onClose={onDetailClose} />
     </>
   );
 
@@ -119,7 +128,15 @@ export default function Home() {
             {term.korean}
           </Td>
           <Td padding="0" textAlign="center">
-            <Button size="sm">보기</Button>
+            <Button
+              size="sm"
+              onClick={() => {
+                setSelectedTerm(term.english);
+                onDetailOpen();
+              }}
+            >
+              보기
+            </Button>
           </Td>
         </Tr>
       );
@@ -164,4 +181,6 @@ export default function Home() {
         setIsLoading(false);
       });
   }
+
+  type TermIndex = Term['english'];
 }
