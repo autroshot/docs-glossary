@@ -2,7 +2,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import type { AppProps } from 'next/app';
 import { useEffect } from 'react';
 import TagManager from 'react-gtm-module';
-import { default as Layout } from '../components/layout/container';
+import Layout from '../components/layout/container';
 import theme from '../themes';
 
 function MyApp({ Component, pageProps }: AppProps) {
