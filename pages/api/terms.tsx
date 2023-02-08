@@ -1,5 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
   req: NextApiRequest,
@@ -28,6 +28,7 @@ export default async function handler(
             type: row.type ?? '',
             field: row.field ?? '',
             description: row.description ?? '',
+            source: row.source ?? '',
           } as Term;
         });
 
@@ -55,5 +56,6 @@ export interface Term {
   type: string;
   field: string;
   description: string;
+  source: string;
 }
 export type GetResponseData = Term[];

@@ -43,7 +43,8 @@ export default class MyStorage {
       typeof object[0].korean === 'string' &&
       typeof object[0].type === 'string' &&
       typeof object[0].field === 'string' &&
-      typeof object[0].description === 'string'
+      typeof object[0].description === 'string' &&
+      typeof object[0].source === 'string'
     );
   }
 }

@@ -41,10 +41,7 @@ export default function DetailDrawer({
               <Item title="유형" content={term.type} />
               <Item title="분야" content={term.field} />
               <Item title="설명" content={term.description} />
-              <Item
-                title="출처"
-                content="http://terms.tta.or.kr/dictionary/dictionaryView.do?word_seq=053425-2http://terms.tta.or.kr/dictionary/dictionaryView.do?word_seq=053425-2http://terms.tta.or.kr/dictionary/dictionaryView.do?word_seq=053425-2http://terms.tta.or.kr/dictionary/dictionaryView.do?word_seq=053425-2http://terms.tta.or.kr/dictionary/dictionaryView.do?word_seq=053425-2http://terms.tta.or.kr/dictionary/dictionaryView.do?word_seq=053425-2http://terms.tta.or.kr/dictionary/dictionaryView.do?word_seq=053425-2"
-              />
+              <Item title="출처" content={term.source} />
             </VStack>
           </DrawerBody>
         </Container>
