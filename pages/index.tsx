@@ -16,8 +16,8 @@ import Head from 'next/head';
 import { RefObject, useEffect, useRef, useState } from 'react';
 import MyStorage from '../classes/MyStorage';
 import DetailDrawer from '../components/detailDrawer';
-import GlossaryTable from '../components/glossaryTable';
-import Update from '../components/update';
+import GlossaryTable from '../components/glossary/list/table';
+import Update from '../components/glossary/list/update';
 import { GetResponseData, Term } from './api/terms';
 
 export default function Home() {

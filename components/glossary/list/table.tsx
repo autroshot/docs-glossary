@@ -1,5 +1,5 @@
 import { Table, TableContainer, Tbody, Th, Thead, Tr } from '@chakra-ui/react';
-import styles from './glossaryTable.module.css';
+import styles from './table.module.css';
 
 export default function GlossaryTable({ children }: Props) {
   return (
