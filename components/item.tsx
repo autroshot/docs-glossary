@@ -1,6 +1,6 @@
-import { Box, Heading, Text, useColorMode } from '@chakra-ui/react';
+import { Box, Heading, Link, Text, useColorMode } from '@chakra-ui/react';
 
-export default function Item({ title, content }: Props) {
+export default function Item({ title, content, isLink }: Props) {
   const { colorMode } = useColorMode();
 
   return (
@@ -11,7 +11,15 @@ export default function Item({ title, content }: Props) {
       >
         {title}
       </Heading>
-      <Text mt="2">{content}</Text>
+      <Box mt="2">
+        {isLink ? (
+          <Link href={content} isExternal>
+            {content}
+          </Link>
+        ) : (
+          <Text>{content}</Text>
+        )}
+      </Box>
     </Box>
   );
 }
@@ -19,4 +27,5 @@ export default function Item({ title, content }: Props) {
 interface Props {
   title: string;
   content: string;
+  isLink?: boolean;
 }

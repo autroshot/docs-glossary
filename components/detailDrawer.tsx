@@ -46,7 +46,7 @@ export default function DetailDrawer({
                 <Item title="설명" content={term.description} />
               )}
               {term.source.length === 0 ? null : (
-                <Item title="출처" content={term.source} />
+                <Item title="출처" content={term.source} isLink />
               )}
             </VStack>
           </DrawerBody>
