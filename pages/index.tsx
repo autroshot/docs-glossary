@@ -29,9 +29,9 @@ export default function Home() {
   const [selectedTerm, setSelectedTerm] = useState<null | Term>(null);
 
   const searchWordInput = useRef<HTMLInputElement>(null);
-  const detailOpenButtons = useRef<
-    Map<TermIndex, RefObject<HTMLButtonElement>>
-  >(new Map());
+  const detailOpenButtons = useRef<Map<Term, RefObject<HTMLButtonElement>>>(
+    new Map()
+  );
 
   const {
     isOpen: isDetailOpen,
@@ -94,7 +94,7 @@ export default function Home() {
       {terms !== null && selectedTerm !== null ? (
         <DetailDrawer
           term={selectedTerm ?? terms[0]}
-          finalFocusRef={detailOpenButtons.current.get(String(selectedTerm))}
+          finalFocusRef={detailOpenButtons.current.get(selectedTerm)}
           isOpen={isDetailOpen}
           onClose={onDetailClose}
         />
@@ -144,7 +144,7 @@ export default function Home() {
               size="sm"
               ref={(ref) => {
                 if (ref !== null)
-                  detailOpenButtons.current.set(term.english, { current: ref });
+                  detailOpenButtons.current.set(term, { current: ref });
               }}
               onClick={() => {
                 setSelectedTerm(term);
