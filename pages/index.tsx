@@ -26,7 +26,7 @@ export default function Home() {
   const [searchWord, setSearchWord] = useState<null | string>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const [selectedTerm, setSelectedTerm] = useState<null | TermIndex>(null);
+  const [selectedTerm, setSelectedTerm] = useState<null | Term>(null);
 
   const searchWordInput = useRef<HTMLInputElement>(null);
   const detailOpenButtons = useRef<
@@ -93,7 +93,7 @@ export default function Home() {
       </Container>
       {terms !== null && selectedTerm !== null ? (
         <DetailDrawer
-          term={terms.find((term) => term.english === selectedTerm) ?? terms[0]}
+          term={selectedTerm ?? terms[0]}
           finalFocusRef={detailOpenButtons.current.get(String(selectedTerm))}
           isOpen={isDetailOpen}
           onClose={onDetailClose}
@@ -147,7 +147,7 @@ export default function Home() {
                   detailOpenButtons.current.set(term.english, { current: ref });
               }}
               onClick={() => {
-                setSelectedTerm(term.english);
+                setSelectedTerm(term);
                 onDetailOpen();
               }}
             >
