@@ -1,21 +1,24 @@
+import { InfoOutlineIcon, SearchIcon } from '@chakra-ui/icons';
 import {
   Container,
   Heading,
+  IconButton,
   Input,
   InputGroup,
   InputRightElement,
   Spinner,
   Td,
   Tr,
+  useDisclosure,
 } from '@chakra-ui/react';
-import Head from 'next/head';
-import GlossaryTable from '../components/glossaryTable';
-import { SearchIcon } from '@chakra-ui/icons';
-import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
-import { GetResponseData, Term } from './api/terms';
+import Head from 'next/head';
+import { RefObject, useEffect, useRef, useState } from 'react';
 import MyStorage from '../classes/MyStorage';
+import DetailDrawer from '../components/detailDrawer';
+import GlossaryTable from '../components/glossaryTable';
 import Update from '../components/update';
+import { GetResponseData, Term } from './api/terms';
 
 export default function Home() {
   const [terms, setTerms] = useState<null | Term[]>(null);
@@ -23,7 +26,18 @@ export default function Home() {
   const [searchWord, setSearchWord] = useState<null | string>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const inputElement = useRef<HTMLInputElement>(null);
+  const [selectedTerm, setSelectedTerm] = useState<null | Term>(null);
+
+  const searchWordInput = useRef<HTMLInputElement>(null);
+  const detailOpenButtons = useRef<Map<Term, RefObject<HTMLButtonElement>>>(
+    new Map()
+  );
+
+  const {
+    isOpen: isDetailOpen,
+    onOpen: onDetailOpen,
+    onClose: onDetailClose,
+  } = useDisclosure();
 
   useEffect(() => {
     const myLocalStorage = new MyStorage(localStorage);
@@ -42,7 +56,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    inputElement.current?.focus();
+    searchWordInput.current?.focus();
   }, []);
 
   return (
@@ -50,7 +64,7 @@ export default function Home() {
       <Head>
         <title>용어집</title>
       </Head>
-      <Container centerContent maxW="container.xl" my={5}>
+      <Container centerContent maxW="container.md" my={5}>
         <Heading my={3}>용어집</Heading>
         <Update
           isLoading={isLoading}
@@ -61,7 +75,7 @@ export default function Home() {
         <InputGroup my={3}>
           <Input
             placeholder="검색할 용어의 영어나 한국어를 입력하세요."
-            ref={inputElement}
+            ref={searchWordInput}
             value={searchWord === null ? '' : searchWord}
             onChange={(event) =>
               setSearchWord(
@@ -77,6 +91,14 @@ export default function Home() {
         </InputGroup>
         <GlossaryTable>{createGlossaryTableContent()}</GlossaryTable>
       </Container>
+      {terms !== null && selectedTerm !== null ? (
+        <DetailDrawer
+          term={selectedTerm ?? terms[0]}
+          finalFocusRef={detailOpenButtons.current.get(selectedTerm)}
+          isOpen={isDetailOpen}
+          onClose={onDetailClose}
+        />
+      ) : null}
     </>
   );
 
@@ -111,11 +133,26 @@ export default function Home() {
     return getFilteredTerms().map((term) => {
       return (
         <Tr key={term.english}>
-          <Td>{term.english}</Td>
-          <Td>{term.korean}</Td>
-          <Td>{term.type}</Td>
-          <Td>{term.field}</Td>
-          <Td>{term.description}</Td>
+          <Td overflow="hidden" textOverflow="ellipsis">
+            {term.english}
+          </Td>
+          <Td overflow="hidden" textOverflow="ellipsis">
+            {term.korean}
+          </Td>
+          <Td padding="0" textAlign="center">
+            <IconButton
+              icon={<InfoOutlineIcon />}
+              aria-label="상세 보기"
+              ref={(ref) => {
+                if (ref !== null)
+                  detailOpenButtons.current.set(term, { current: ref });
+              }}
+              onClick={() => {
+                setSelectedTerm(term);
+                onDetailOpen();
+              }}
+            />
+          </Td>
         </Tr>
       );
     });
