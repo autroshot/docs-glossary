@@ -39,15 +39,15 @@ export default function DetailDrawer({
             >
               <Item title="한국어" content={term.korean} />
               <Item title="유형" content={term.type} />
-              {term.type.length === 0 ? (
+              {term.field.length === 0 ? null : (
                 <Item title="분야" content={term.field} />
-              ) : null}
-              {term.type.length === 0 ? (
+              )}
+              {term.description.length === 0 ? null : (
                 <Item title="설명" content={term.description} />
-              ) : null}
-              {term.type.length === 0 ? (
+              )}
+              {term.source.length === 0 ? null : (
                 <Item title="출처" content={term.source} />
-              ) : null}
+              )}
             </VStack>
           </DrawerBody>
         </Container>
