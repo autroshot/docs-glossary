@@ -197,6 +197,4 @@ export default function Home() {
         setIsLoading(false);
       });
   }
-
-  type TermIndex = Term['english'];
 }
