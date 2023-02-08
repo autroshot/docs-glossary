@@ -1,9 +1,9 @@
-import type { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
-import theme from '../themes';
-import Layout from '../components/layout';
+import type { AppProps } from 'next/app';
 import { useEffect } from 'react';
 import TagManager from 'react-gtm-module';
+import { default as Layout } from '../components/layout/container';
+import theme from '../themes';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {

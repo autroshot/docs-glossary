@@ -2,7 +2,7 @@ import { ScriptProps } from 'next/script';
 import Footer from './footer';
 import Navbar from './navbar';
 
-export default function Layout({ children }: ScriptProps) {
+export default function Container({ children }: ScriptProps) {
   return (
     <>
       <nav>
