@@ -1,8 +1,8 @@
-import { SearchIcon } from '@chakra-ui/icons';
+import { InfoOutlineIcon, SearchIcon } from '@chakra-ui/icons';
 import {
-  Button,
   Container,
   Heading,
+  IconButton,
   Input,
   InputGroup,
   InputRightElement,
@@ -140,8 +140,9 @@ export default function Home() {
             {term.korean}
           </Td>
           <Td padding="0" textAlign="center">
-            <Button
-              size="sm"
+            <IconButton
+              icon={<InfoOutlineIcon />}
+              aria-label="상세 보기"
               ref={(ref) => {
                 if (ref !== null)
                   detailOpenButtons.current.set(term, { current: ref });
@@ -150,9 +151,7 @@ export default function Home() {
                 setSelectedTerm(term);
                 onDetailOpen();
               }}
-            >
-              보기
-            </Button>
+            />
           </Td>
         </Tr>
       );
