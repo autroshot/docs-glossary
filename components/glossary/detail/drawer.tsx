@@ -10,7 +10,7 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { RefObject } from 'react';
-import { Term } from '../pages/api/terms';
+import { Term } from '../../../pages/api/terms';
 import Item from './item';
 
 export default function DetailDrawer({
