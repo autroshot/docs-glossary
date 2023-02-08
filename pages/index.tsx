@@ -177,6 +177,10 @@ export default function Home() {
     fetchTerms(new MyStorage(localStorage));
   }
 
+  function getTerm(english: string) {
+    return terms?.find((term) => term.english === english) ?? null;
+  }
+
   function fetchTerms(myLocalStorage: MyStorage) {
     axios
       .get<GetResponseData>('/api/terms')
