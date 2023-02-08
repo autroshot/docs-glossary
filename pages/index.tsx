@@ -91,11 +91,14 @@ export default function Home() {
         </InputGroup>
         <GlossaryTable>{createGlossaryTableContent()}</GlossaryTable>
       </Container>
-      <DetailDrawer
-        finalFocusRef={detailOpenButtons.current.get(String(selectedTerm))}
-        isOpen={isDetailOpen}
-        onClose={onDetailClose}
-      />
+      {terms !== null && selectedTerm !== null ? (
+        <DetailDrawer
+          term={terms.find((term) => term.english === selectedTerm) ?? terms[0]}
+          finalFocusRef={detailOpenButtons.current.get(String(selectedTerm))}
+          isOpen={isDetailOpen}
+          onClose={onDetailClose}
+        />
+      ) : null}
     </>
   );
 

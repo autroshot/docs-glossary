@@ -10,9 +10,11 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { RefObject } from 'react';
+import { Term } from '../pages/api/terms';
 import Item from './item';
 
 export default function DetailDrawer({
+  term,
   finalFocusRef,
   isOpen,
   onClose,
@@ -27,7 +29,7 @@ export default function DetailDrawer({
       <DrawerOverlay />
       <DrawerContent>
         <Container maxW="container.md" maxH="100%" overflowY="auto">
-          <DrawerHeader fontSize="2xl">accessibility</DrawerHeader>
+          <DrawerHeader fontSize="2xl">{term.english}</DrawerHeader>
           <DrawerCloseButton />
           <DrawerBody>
             <VStack
@@ -35,14 +37,10 @@ export default function DetailDrawer({
               align="stretch"
               divider={<StackDivider borderColor="gray.200" />}
             >
-              <Item title="한국어" content="프로퍼티" />
-              <Item title="유형" content="일반" />
-              <Item title="분야" content="리액트" />
-              <Item
-                title="설명"
-                content="원래 뜻은 속성이지만 attribute와의 구분을 위해 프로퍼티를 사용
-                  원래 뜻은 속성이지만 attribute와의 구분을 위해 프로퍼티를 사용 원래 뜻은 속성이지만 attribute와의 구분을 위해 프로퍼티를 사용 원래 뜻은 속성이지만 attribute와의 구분을 위해 프로퍼티를 사용 원래 뜻은 속성이지만 attribute와의 구분을 위해 프로퍼티를 사용"
-              />
+              <Item title="한국어" content={term.korean} />
+              <Item title="유형" content={term.type} />
+              <Item title="분야" content={term.field} />
+              <Item title="설명" content={term.description} />
               <Item
                 title="출처"
                 content="http://terms.tta.or.kr/dictionary/dictionaryView.do?word_seq=053425-2http://terms.tta.or.kr/dictionary/dictionaryView.do?word_seq=053425-2http://terms.tta.or.kr/dictionary/dictionaryView.do?word_seq=053425-2http://terms.tta.or.kr/dictionary/dictionaryView.do?word_seq=053425-2http://terms.tta.or.kr/dictionary/dictionaryView.do?word_seq=053425-2http://terms.tta.or.kr/dictionary/dictionaryView.do?word_seq=053425-2http://terms.tta.or.kr/dictionary/dictionaryView.do?word_seq=053425-2"
@@ -56,6 +54,7 @@ export default function DetailDrawer({
 }
 
 interface Props {
+  term: Term;
   finalFocusRef?: RefObject<HTMLElement>;
   isOpen: boolean;
   onClose: () => void;
