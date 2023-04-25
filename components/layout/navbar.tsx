@@ -19,7 +19,7 @@ export default function Navbar() {
       <NextLink href="/">용어집</NextLink>
       <NextLink href="/reference">참고</NextLink>
       <Spacer display={{ base: 'none', md: 'block' }} />
-      <Link href="https://autroshot.github.io/docs-repository/" isExternal>
+      <Link href="https://autroshot.github.io/doc-archive/" isExternal>
         문서 저장소 <ExternalLinkIcon verticalAlign="0" />
       </Link>
       <Link
