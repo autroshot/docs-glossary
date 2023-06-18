@@ -182,11 +182,16 @@ export default function Home() {
       .then((res) => {
         const currentTimestamp = Date.now();
 
+        const terms = res.data;
+        const sortedTerms = terms.sort((a, b) =>
+          a.english.localeCompare(b.english)
+        );
+
         setIsError(false);
-        setTerms(res.data);
+        setTerms(sortedTerms);
         setUpdatedTimestamp(currentTimestamp);
 
-        myLocalStorage.setTerms(res.data);
+        myLocalStorage.setTerms(sortedTerms);
         myLocalStorage.setUpdatedTimestamp(currentTimestamp);
       })
       .catch(() => {
