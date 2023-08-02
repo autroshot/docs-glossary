@@ -1,4 +1,4 @@
-import { Button, Center, Spinner } from '@chakra-ui/react';
+import { Button, Center } from '@chakra-ui/react';
 
 export default function Update({
   isLoading,
@@ -9,7 +9,7 @@ export default function Update({
   return (
     <Center>
       {getDescription()}
-      <Button ms={3} disabled={isLoading} onClick={onClick}>
+      <Button ms={3} isLoading={isLoading} onClick={onClick}>
         갱신
       </Button>
     </Center>
@@ -17,7 +17,7 @@ export default function Update({
 
   function getDescription(): React.ReactNode {
     if (isError) return '오류';
-    if (isLoading) return <Spinner label="로딩 중..." />;
+    if (isLoading) return '갱신 중...';
     if (updatedTimestamp === null) return '오류';
     return (
       <>{`${millisecondsToBriefReadableTime(
