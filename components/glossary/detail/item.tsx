@@ -12,7 +12,7 @@ export default function Item({ title, content, isLink }: Props) {
         {title}
       </Heading>
       <Box mt="2">
-        {isLink ? (
+        {isLink && content.startsWith('http') ? (
           <Link href={content} isExternal>
             {content}
           </Link>
