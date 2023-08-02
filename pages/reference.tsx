@@ -52,6 +52,14 @@ export default function Reference() {
               MDN 번역 지침의 용어 지침
             </Link>
           </ListItem>
+          <ListItem>
+            <Link
+              href="https://msit.powerbi.com/view?r=eyJrIjoiODJmYjU4Y2YtM2M0ZC00YzYxLWE1YTktNzFjYmYxNTAxNjQ0IiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9"
+              isExternal
+            >
+              마이크로소프트 용어집
+            </Link>
+          </ListItem>
         </UnorderedList>
       </Container>
     </>
