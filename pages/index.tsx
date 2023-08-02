@@ -89,6 +89,7 @@ export default function Home() {
             <SearchIcon />
           </InputRightElement>
         </InputGroup>
+        {terms !== null ? `용어 ${terms.length}개` : '개수 세는 중...'}
         <GlossaryTable>{createGlossaryTableContent()}</GlossaryTable>
       </Container>
       {terms !== null && selectedTerm !== null ? (
