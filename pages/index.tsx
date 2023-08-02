@@ -16,6 +16,7 @@ import Head from 'next/head';
 import { RefObject, useEffect, useRef, useState } from 'react';
 import MyStorage from '../classes/MyStorage';
 import DetailDrawer from '../components/glossary/detail/drawer';
+import Count from '../components/glossary/list/count';
 import GlossaryTable from '../components/glossary/list/table';
 import Update from '../components/glossary/list/update';
 import { GetResponseData, Term } from './api/terms';
@@ -89,7 +90,7 @@ export default function Home() {
             <SearchIcon />
           </InputRightElement>
         </InputGroup>
-        {terms !== null ? `용어 ${terms.length}개` : '개수 세는 중...'}
+        <Count terms={terms} />
         <GlossaryTable>{createGlossaryTableContent()}</GlossaryTable>
       </Container>
       {terms !== null && selectedTerm !== null ? (
